@@ -1,0 +1,8 @@
+# drawers.string
+In this package we provide numerous fancy drawers for given strings.
+* **Saw1Drawer**
+* **Saw2Drawer**
+* **Saw3Drawer**
+
+Moreover we ship abstract class **SawDrawer** to simplify creation of
+similar Drawers.
