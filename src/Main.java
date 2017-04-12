@@ -22,8 +22,6 @@ public class Main {
 //
 //            MinimalBracketFlipsToBalance.print(")(");
 
-//            BalancedBracketsGrouper.print("ab");
-
 //            TwoArgumentBracketsGrouper.print("abc");
 
         } catch (IllegalArgumentException | IllegalStateException ex) {

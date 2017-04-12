@@ -3,7 +3,7 @@ package test;
 import interviewquestions.MinimalBracketFlipsToBalance;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * Created by mtumilowicz on 2017-04-05.
