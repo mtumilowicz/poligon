@@ -78,4 +78,4 @@ similar Drawers:
 
 We want to have full control over creation of instances of different saw drawers
 so we have to use **SawDrawerFactory**. Furthermore - in this factory we perform field validation
-(much more natural than in appropriate conctructors).
+(much more natural than in the appropriate conctructors).
