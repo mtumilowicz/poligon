@@ -1,4 +1,4 @@
-package interviewquestions;
+package problems.brackets;
 
 import com.google.common.collect.ImmutableMap;
 

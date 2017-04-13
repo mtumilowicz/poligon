@@ -1,8 +1,8 @@
 package test;
 
 import com.google.common.collect.ImmutableMap;
-import interviewquestions.BalancedBracketsGenerator;
-import interviewquestions.BalanceChecker;
+import problems.brackets.BalancedBracketsGenerator;
+import problems.brackets.BalanceChecker;
 import org.junit.Test;
 import utils.CatalanNumberGenerator;
 
@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
  */
 public class BalanceBracketsGeneratorTests {
 
-    BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')','('));
+    private BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')','('));
 
     @Test
     public void severalPrimaryCases() {

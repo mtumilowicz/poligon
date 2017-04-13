@@ -1,6 +1,6 @@
 package test;
 
-import interviewquestions.MinimalBracketFlipsToBalance;
+import problems.brackets.MinimalBracketFlipsToBalance;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

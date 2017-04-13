@@ -1,4 +1,4 @@
-package interviewquestions;
+package problems.brackets;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -44,7 +44,7 @@ public class BalanceChecker {
 
     public static class BalanceCheckerFactory {
         public static BalanceChecker get(ImmutableMap<Character, Character> balanceBijectionMap) {
-            Objects.requireNonNull(balanceBijectionMap);
+            Preconditions.checkArgument(balanceBijectionMap != null);
 
             validateBijection(balanceBijectionMap);
             return new BalanceChecker(balanceBijectionMap);

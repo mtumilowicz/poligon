@@ -1,4 +1,4 @@
-package interviewquestions;
+package problems.brackets;
 
 import com.google.common.collect.ImmutableMap;
 import utils.CombinationWithRepetitionsGenerator;
@@ -12,13 +12,13 @@ import java.util.stream.Collectors;
  */
 public class BalancedMixedBracketsGenerator {
 
-    static final BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')','(','}','{',']','['));
+    private static final BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')','(','}','{',']','['));
 
-    static public void print (int pairsNumber) {
+    public static void print (int pairsNumber) {
         System.out.println(Arrays.toString(generate(2*pairsNumber).toArray()));
     }
 
-    static public Set<String> generate(int expectedLength) {
+    public static Set<String> generate(int expectedLength) {
         return CombinationWithRepetitionsGenerator.generate("(){}[]", expectedLength).stream().filter(balanceChecker::check).collect(Collectors.toSet());
     }
 }

@@ -1,4 +1,4 @@
-package interviewquestions;
+package problems.brackets;
 
 import com.google.common.base.Preconditions;
 
@@ -36,7 +36,6 @@ public class BalancedBracketsRemover {
                 stack.push(c);
             }
         }
-
         return stack;
     }
 }

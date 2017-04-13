@@ -1,4 +1,4 @@
-package interviewquestions;
+package problems.brackets;
 
 import java.util.Arrays;
 import java.util.HashSet;

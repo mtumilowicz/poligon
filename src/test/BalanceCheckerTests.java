@@ -1,10 +1,10 @@
 package test;
 
 import com.google.common.collect.ImmutableMap;
-import interviewquestions.BalanceChecker;
+import problems.brackets.BalanceChecker;
 import org.junit.Test;
 
-import static interviewquestions.BalanceChecker.BalanceCheckerFactory;
+import static problems.brackets.BalanceChecker.BalanceCheckerFactory;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
