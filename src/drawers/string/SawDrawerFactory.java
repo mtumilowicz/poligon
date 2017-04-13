@@ -9,21 +9,20 @@ import java.util.Objects;
  */
 public class SawDrawerFactory {
 
-    public static SawDrawer getSawDrawer(SawDrawerName name, String str, int height, int period) {
+    public static SawDrawer getSawDrawer(SawDrawerName name, String str, int height) {
         Objects.requireNonNull(name);
         Objects.requireNonNull(str);
-        Preconditions.checkArgument(height < 1);
-        Preconditions.checkArgument(period < 1);
+        Preconditions.checkArgument(height >= 1);
         SawDrawer sd;
         switch(name){
             case SAW1:
-                sd = new Saw1Drawer(str, height, period);
+                sd = new Saw1Drawer(str, height, 2*height);
                 break;
             case SAW2:
-                sd = new Saw2Drawer(str, height, period);
+                sd = new Saw2Drawer(str, height, 2*height);
                 break;
             case SAW3:
-                sd = new Saw3Drawer(str, height, period);
+                sd = new Saw3Drawer(str, height, 2*(height+1));
                 break;
             default:
                 throw new IllegalStateException("Improper value!");

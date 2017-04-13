@@ -18,12 +18,12 @@ public abstract class SawDrawer implements StringDrawer {
 
     public void draw() {
         for (int i = 0; i <= height; i++) {
-            drawRaw(i);
+            drawRow(i);
             System.out.println();
         }
     }
 
-    private void drawRaw(int i) {
+    private void drawRow(int i) {
         int k = 0;
         while (i + k < base.length()) {
             drawPart(i, k);

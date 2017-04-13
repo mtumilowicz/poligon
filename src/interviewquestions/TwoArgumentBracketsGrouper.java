@@ -3,6 +3,7 @@ package interviewquestions;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by mtumilowicz on 2017-04-06.
@@ -10,10 +11,12 @@ import java.util.List;
 public class TwoArgumentBracketsGrouper {
 
     public static void print(String s) {
+        Objects.requireNonNull(s);
         System.out.println(Arrays.toString(TwoArgumentBracketsGrouper.generate(s).toArray()));
     }
 
     public static List<String> generate(String s) {
+        Objects.requireNonNull(s);
         if(s.length() == 1) {
             return new LinkedList<>(Arrays.asList(s));
         }
@@ -21,6 +24,7 @@ public class TwoArgumentBracketsGrouper {
     }
 
     private static List<String> construct(String s) {
+        Objects.requireNonNull(s);
 
         if(s.length() == 1) {
             return new LinkedList<>(Arrays.asList(s));
