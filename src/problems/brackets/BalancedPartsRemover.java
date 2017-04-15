@@ -2,7 +2,7 @@ package problems.brackets;
 
 import com.google.common.base.Preconditions;
 
-import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Stack;
 
@@ -13,17 +13,32 @@ public class BalancedPartsRemover {
 
     public static void print(String str) {
         Objects.requireNonNull(str);
-        System.out.println(Arrays.toString(remove(str).toArray()));
+        System.out.println(remove(str));
+    }
+    
+    public static String remove(String str) {
+        return removeAndReturnAsStack(str).toString();
     }
 
-    public static Stack<Character> remove(String str) {
+    public static Stack<Character> removeAndReturnAsStack(String str) {
         Objects.requireNonNull(str);
-        int strLength = str.length();
-        Preconditions.checkArgument((strLength % 2) == 0, "String has to be even.");
         Preconditions.checkArgument(str.matches("^[()]*$"), "Only '(' & ')' allowed.");
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> stack = new Stack<Character>() {
+            public String toString() {
+                Iterator<Character> it = iterator();
+                if (! it.hasNext())
+                    return "empty";
 
-        for (int i = 0; i < strLength; i++) {
+                StringBuilder sb = new StringBuilder();
+                for (;;) {
+                    sb.append(it.next());
+                    if (! it.hasNext())
+                        return sb.toString();
+                }
+            }
+        };
+
+        for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             if (c == ')' && !stack.isEmpty()) {
                 if (stack.peek() == '(') {

@@ -25,5 +25,7 @@ public class Main {
 //            MinimalBracketFlipsToBalance.print(")(");
 //
 //            TwoArgumentBracketsGrouper.print("abc");
+//
+//            BalancedPartsRemover.print(")((()())())))(((");
     }
 }

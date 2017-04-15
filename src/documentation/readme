@@ -153,4 +153,5 @@ different way: construct solution by recursion.*
 is a solution to the following problem:  
 *From a given string containing only '(' & ')' remove all balanced (in 
  sense of BalanceChecker) parts.  
+ For example: )((()())())))((( -> )))(((
  Solution is construct using the stack structure.*
