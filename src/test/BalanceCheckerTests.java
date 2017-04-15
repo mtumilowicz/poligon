@@ -25,6 +25,31 @@ public class BalanceCheckerTests {
         assertFalse(balanceChecker.check("[]"));
     }
 
+    @Test
+    public void moreOpeningsThanClosing() {
+        BalanceChecker balanceChecker = BalanceCheckerFactory.get(ImmutableMap.of(')','('));
+        assertFalse(balanceChecker.check("((()"));
+    }
+
+    @Test
+    public void oneMatrioshka() {
+        BalanceChecker balanceChecker = BalanceCheckerFactory.get(ImmutableMap.of(')','('));
+        assertTrue(balanceChecker.check("(())"));
+    }
+
+
+    @Test
+    public void twoMatrioshkas() {
+        BalanceChecker balanceChecker = BalanceCheckerFactory.get(ImmutableMap.of(')','('));
+        assertTrue(balanceChecker.check("(())"));
+    }
+
+    @Test
+    public void threeMatrioshkas() {
+        BalanceChecker balanceChecker = BalanceCheckerFactory.get(ImmutableMap.of(')','('));
+        assertTrue(balanceChecker.check("((()))"));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void nullBijectionMap() {
         BalanceCheckerFactory.get(null);

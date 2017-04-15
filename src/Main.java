@@ -13,6 +13,9 @@ public class Main {
 //            BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(']', '[', '}', '{', ')', '('));
 //            System.out.println(balanceChecker.check("[{[]()(({[()]}))}]"));
 //
+//            BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')', '('));
+//            System.out.println(balanceChecker.check("((()"));
+//
 //            BalancedBracketsGenerator.print(2);
 //
 //            CombinationWithRepetitionsGenerator.print("(){}", 6);

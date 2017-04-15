@@ -34,6 +34,9 @@ public class BalanceChecker {
                 if (bracketsStack.isEmpty()) {
                     return false;
                 }
+                if (bracketsStack.size() > (string.length() - i)) {
+                    return false;
+                }
                 if (!bracketsStack.pop().equals(balanceBijectionMap.get(symbol))) {
                     return false;
                 }
@@ -44,7 +47,7 @@ public class BalanceChecker {
 
     public static class BalanceCheckerFactory {
         public static BalanceChecker get(ImmutableMap<Character, Character> balanceBijectionMap) {
-            Preconditions.checkArgument(balanceBijectionMap != null);
+//            Preconditions.checkArgument(balanceBijectionMap != null);
 
             validateBijection(balanceBijectionMap);
             return new BalanceChecker(balanceBijectionMap);

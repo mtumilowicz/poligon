@@ -1,4 +1,5 @@
-# drawers.string
+# poligon
+## drawers.string
 In this package we provide numerous fancy drawers for given strings.
 * **Saw1Drawer**
 
@@ -77,4 +78,8 @@ similar Drawers:
 
 We want to have full control over creation of instances of different saw drawers
 so we have to use **SawDrawerFactory**. Furthermore - in this factory we perform field validation
-(much more natural than in appropriate conctructors).
+(much more natural than in the appropriate conctructors).
+
+## problems.brackets
+
+In this package we would

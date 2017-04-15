@@ -31,7 +31,7 @@ public abstract class SawDrawer implements StringDrawer {
         }
     }
 
-    abstract void drawPart(int i, int part);
+    abstract void drawPart(int row, int part);
 
     void drawSeparator(int i) {
         for (int a = 0; a < i; a++) System.out.print(separator);
