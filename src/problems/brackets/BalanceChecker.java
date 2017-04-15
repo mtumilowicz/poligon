@@ -47,7 +47,7 @@ public class BalanceChecker {
 
     public static class BalanceCheckerFactory {
         public static BalanceChecker get(ImmutableMap<Character, Character> balanceBijectionMap) {
-//            Preconditions.checkArgument(balanceBijectionMap != null);
+            Preconditions.checkArgument(balanceBijectionMap != null);
 
             validateBijection(balanceBijectionMap);
             return new BalanceChecker(balanceBijectionMap);
