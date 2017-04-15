@@ -124,7 +124,7 @@ Saw1Drawer the _part_ is a first matrix(6x5)
 We want to have full control over creation of instances of different saw 
 drawers so we have to use **SawDrawerFactory**. Furthermore - in this 
 factory we perform field validation (much more natural than in the 
-appropriate conctructors).
+appropriate constructors).
 <a name="problems.brackets"></a>
 ## problems.brackets
 
@@ -134,7 +134,7 @@ or in the interviews.
 <a name="BalanceChecker"></a>
 * **BalanceChecker**
 is a solution to the following problem:  
-*For a given string and brackets map decide if string is balanced. It's
+*For the given string and brackets map decide if string is balanced. It's
 easier to show examples of balanced and unbalanced strings than showing
 exact definition, so:  
 (()(()()))() - is *balanced*  
@@ -143,7 +143,7 @@ solution is construct using the stack structure.*
 <a name="BalancedBracketsGenerator"></a>
 * **BalancedBracketsGenerator**
 is a solution to the following problem:  
-*For a given number of pairs, generate all possible balanced 
+*For the given number of pairs, generate all possible balanced 
 brackets '(' & ')'. It's very important to have a good approach to such
 tasks - producing all possible combinations of '(' & ')' and then filtering
 which combination is balanced, is a very poor solution - we decide to choose 
@@ -151,7 +151,18 @@ different way: construct solution by recursion.*
 <a name="BalancedPartsRemover"></a>
 * **BalancedPartsRemover**
 is a solution to the following problem:  
-*From a given string containing only '(' & ')' remove all balanced (in 
- sense of BalanceChecker) parts.  
- For example: )((()())())))((( -> )))(((
- Solution is construct using the stack structure.*
+*From the given string containing only '(' & ')' remove all balanced (in 
+sense of BalanceChecker) parts.  
+For example: )((()())())))((( -> )))(((  
+Solution is construct using the stack structure.*
+<a name="BalancedPartsRemover"></a>
+* **BalancedMixedBracketsGenerator**
+is a solution to the following problem:  
+*For the given number of pairs generate all balanced (in sense of 
+BalanceChecker) strings containing only: '(', ')', '\[', '\]', '{', '}'. 
+We do it in a hardly inefficient way (take a look at optimal solution in
+BalancedBracketsGenerator - it's hardly impossible to extend this solution
+to the other types of brackets in an easy and smart way, at least in java;
+in haskell you could provide solution just in one line). What is the 
+purpose of this class? We simply try to find a practical application of
+CombinationWithRepetitionsGenerator, java8 streams and filter.*
