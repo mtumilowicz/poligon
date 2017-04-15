@@ -1,9 +1,9 @@
 # poligon
 ## drawers.string
 In this package we provide numerous fancy drawers for given strings.
-* **Saw1Drawer**
+* **Saw1Drawer**  
 
-ex., _string="012345678901234567890"_ and _height=5_
+ex., _string="012345678901234567890"_ and _height=5_  
 
 |   |   |   |   |   |   |   |   |   |   |   |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -72,23 +72,26 @@ ex., _string="01234567890123456"_ and _height=5_
 
 Moreover we ship abstract class **SawDrawer** to simplify creation of
 similar Drawers:
-- _part_ is repeatable sequence (ex. for the first example of the Saw1Drawer the _part_ is a first matrix(6x5)
+- _part_ is repeatable sequence (ex. for the first example of the 
+Saw1Drawer the _part_ is a first matrix(6x5)
 - _height_ is a number of (rows - 1)
 - _period_ is a number of characters in a _part_
 
-We want to have full control over creation of instances of different saw drawers
-so we have to use **SawDrawerFactory**. Furthermore - in this factory we perform field validation
-(much more natural than in the appropriate conctructors).
+We want to have full control over creation of instances of different saw 
+drawers so we have to use **SawDrawerFactory**. Furthermore - in this 
+factory we perform field validation (much more natural than in the 
+appropriate conctructors).
 
 ## problems.brackets
 
 In this package we would like to present solutions to problems & tasks
-concerning brackets, that we have spotted during surfing on the internet or
-in the interviews.
+concerning brackets, that we have spotted during surfing on the internet 
+or in the interviews.
 
 * **BalanceChecker**
 is a solution to the following problem:
-*For a given string and brackets map decide if string is balanced. It's easier
-to show examples of balanced and unbalanced strings than showing exact definion, so:  
+*For a given string and brackets map decide if string is balanced. It's
+easier to show examples of balanced and unbalanced strings than showing
+exact definition, so:  
 (()(()()))() - is *balanced*  
 ()))() - is *unbalanced**
