@@ -13,8 +13,8 @@ public class Main {
 //            BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(']', '[', '}', '{', ')', '('));
 //            System.out.println(balanceChecker.check("[{[]()(({[()]}))}]"));
 //
-//            BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')', '('));
-//            System.out.println(balanceChecker.check("((()"));
+//            BalanceChecker balanceChecker2 = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')', '('));
+//            System.out.println(balanceChecker2.check("((()"));
 //
 //            BalancedBracketsGenerator.print(2);
 //
@@ -23,7 +23,7 @@ public class Main {
 //            BalancedMixedBracketsGenerator.print(3);
 //
 //            MinimalBracketFlipsToBalance.print(")(");
-
+//
 //            TwoArgumentBracketsGrouper.print("abc");
     }
 }

@@ -18,7 +18,7 @@ public class MinimalBracketFlipsToBalance {
 
     public static long get(String str) {
         Objects.requireNonNull(str);
-        Stack<Character> afterBalancedRemoval = BalancedBracketsRemover.remove(str);
+        Stack<Character> afterBalancedRemoval = BalancedPartsRemover.remove(str);
         long openingsCount = afterBalancedRemoval.stream().filter(v -> v.equals('(')).count();
         long endingCount = afterBalancedRemoval.size() - openingsCount;
         return afterBalancedRemoval.size() % 2 != 0 ? -1 : LongMath.divide(openingsCount, 2, RoundingMode.CEILING) + LongMath.divide(endingCount, 2, RoundingMode.CEILING);

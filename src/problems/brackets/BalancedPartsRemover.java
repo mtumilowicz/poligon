@@ -9,7 +9,7 @@ import java.util.Stack;
 /**
  * Created by mtumilowicz on 2017-03-30.
  */
-public class BalancedBracketsRemover {
+public class BalancedPartsRemover {
 
     public static void print(String str) {
         Objects.requireNonNull(str);
@@ -20,6 +20,7 @@ public class BalancedBracketsRemover {
         Objects.requireNonNull(str);
         int strLength = str.length();
         Preconditions.checkArgument((strLength % 2) == 0, "String has to be even.");
+        Preconditions.checkArgument(str.matches("^[()]*$"), "Only '(' & ')' allowed.");
         Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < strLength; i++) {
