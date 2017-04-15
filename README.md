@@ -79,3 +79,16 @@ similar Drawers:
 We want to have full control over creation of instances of different saw drawers
 so we have to use **SawDrawerFactory**. Furthermore - in this factory we perform field validation
 (much more natural than in the appropriate conctructors).
+
+## problems.brackets
+
+In this package we would like to present solutions to problems & tasks
+concerning brackets, that we have spotted during surfing on the internet or
+in the interviews.
+
+* **BalanceChecker**
+is a solution to the following problem:
+*For a given string and brackets map decide if string is balanced. It's easier
+to show examples of balanced and unbalanced strings than showing exact definion, so:  
+(()(()()))() - is *balanced*  
+()))() - is *unbalanced**
