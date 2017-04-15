@@ -92,6 +92,6 @@ or in the interviews.
 is a solution to the following problem:
 *For a given string and brackets map decide if string is balanced. It's
 easier to show examples of balanced and unbalanced strings than showing
-exact definion, so:  
+exact definition, so:  
 (()(()()))() - is *balanced*  
 ()))() - is *unbalanced**
