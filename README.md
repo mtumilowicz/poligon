@@ -12,12 +12,12 @@
 │   │   ├── StringDrawer
 │   ├── problems.brackets
 │   │   ├── BalanceChecker
-│   │   ├── BalancedBracketsGenerator
+│   │   ├── BalancedParenthesisGenerator
 │   │   ├── BalancedPartsRemover
 │   │   ├── BalancedMixedBracketsGenerator
-│   │   ├── BalanceParenthesesChecker
-│   │   ├── MinimalBracketFlipsToBalance
-│   │   ├── TwoArgumentBracketsGrouper
+│   │   ├── BalanceParenthesisChecker
+│   │   ├── MinimalParenthesisFlipToBalance
+│   │   ├── TwoArgumentParenthesisGrouper
 ```
 
 ### links
@@ -27,16 +27,14 @@
 -- [Saw3Drawer](#Saw3Drawer)  
 -- [SawDrawer](#SawDrawer)  
 -- [SawDrawerFactory](#SawDrawerFactory)  
--- [SawDrawerName](#SawDrawerName)  
--- [StringDrawer](#StringDrawer)  
 **[problems.brackets](#problems.brackets)**  
 -- [BalanceChecker](#BalanceChecker)  
--- [BalancedBracketsGenerator](#BalancedBracketsGenerator)  
+-- [BalancedParenthesisGenerator](#BalancedParenthesisGenerator)  
 -- [BalancedPartsRemover](#BalancedPartsRemover)  
 -- [BalancedMixedBracketsGenerator](#BalancedMixedBracketsGenerator)  
--- [BalanceParenthesesChecker](#BalanceParenthesesChecker)  
--- [MinimalBracketFlipsToBalance](#MinimalBracketFlipsToBalance)  
--- [TwoArgumentBracketsGrouper](#TwoArgumentBracketsGrouper)
+-- [BalanceParenthesisChecker](#BalanceParenthesisChecker)  
+-- [MinimalParenthesisFlipToBalance](#MinimalParenthesisFlipToBalance)  
+-- [TwoArgumentParenthesisGrouper](#TwoArgumentParenthesisGrouper)
 <a name="drawers.string"></a>
 ## drawers.string
 In this package we provide numerous fancy drawers for given strings.
@@ -124,7 +122,7 @@ Saw1Drawer the _part_ is a first matrix(6x5)
 We want to have full control over creation of instances of different saw 
 drawers so we have to use **SawDrawerFactory**. Furthermore - in this 
 factory we perform field validation (much more natural than in the 
-appropriate conctructors).
+appropriate constructors).
 <a name="problems.brackets"></a>
 ## problems.brackets
 
@@ -134,16 +132,16 @@ or in the interviews.
 <a name="BalanceChecker"></a>
 * **BalanceChecker**
 is a solution to the following problem:  
-*For a given string and brackets map decide if string is balanced. It's
+*For the given string and brackets map decide if string is balanced. It's
 easier to show examples of balanced and unbalanced strings than showing
 exact definition, so:  
 (()(()()))() - is *balanced*  
 ()))() - is *unbalanced*  
 solution is construct using the stack structure.*
-<a name="BalancedBracketsGenerator"></a>
-* **BalancedBracketsGenerator**
+<a name="BalancedParenthesisGenerator"></a>
+* **BalancedParenthesisGenerator**
 is a solution to the following problem:  
-*For a given number of pairs, generate all possible balanced 
+*For the given number of pairs, generate all possible balanced 
 brackets '(' & ')'. It's very important to have a good approach to such
 tasks - producing all possible combinations of '(' & ')' and then filtering
 which combination is balanced, is a very poor solution - we decide to choose 
@@ -151,6 +149,39 @@ different way: construct solution by recursion.*
 <a name="BalancedPartsRemover"></a>
 * **BalancedPartsRemover**
 is a solution to the following problem:  
-*From a given string containing only '(' & ')' remove all balanced (in 
- sense of BalanceChecker) parts.  
- Solution is construct using the stack structure.*
+*From the given string containing only '(' & ')' remove all balanced (in 
+sense of BalanceChecker) parts.  
+For example: )((()())())))((( -> )))(((  
+Solution is construct using the stack structure.*
+<a name="BalancedMixedBracketsGenerator"></a>
+* **BalancedMixedBracketsGenerator**
+is a solution to the following problem:  
+*For the given number of pairs generate all balanced (in sense of 
+BalanceChecker) strings containing only: '(', ')', '\[', '\]', '{', '}'. 
+We do it in a hardly inefficient way (take a look at optimal solution in
+BalancedParenthesisGenerator - it's hardly impossible to extend this solution
+to the other types of brackets in an easy and smart way, at least in java;
+in haskell you could provide solution just in one line). What is the 
+purpose of this class? We simply try to find a practical application of
+CombinationWithRepetitionsGenerator, java8 streams and filter.*
+<a name="BalanceParenthesisChecker"></a>
+* **BalanceParenthesisChecker**
+it's a simplification of BalanceChecker, 
+as a brackets map we use ')' & '('.
+<a name="MinimalParenthesisFlipToBalance"></a>
+* **MinimalParenthesisFlipToBalance**
+is a solution to the following problem:  
+*What is the minimal number of bracket flips (changing '(' -> ')' and 
+vice-versa) to make the string balanced. The most important information
+is that after using BalancedPartsRemover we obtain string in the form of
+))...)((...( - so the minimal number of flips could be analytically 
+calculated.*
+<a name="TwoArgumentParenthesisGrouper"></a>
+* **TwoArgumentParenthesisGrouper**
+is a solution to the following problem:  
+*For a given string print all possible groups of its characters in the 
+brackets (bracket is treated as a two-argument operator).  
+For example:  
+ab -> [(ab)]  
+abc -> [(a(bc)), ((ab)c)]  
+abcd -> [(a(b(cd))), (a((bc)d)), ((ab)(cd)), ((a(bc))d), (((ab)c)d)]*
