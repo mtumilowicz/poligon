@@ -1,7 +1,7 @@
 package test;
 
 import com.google.common.collect.ImmutableMap;
-import problems.brackets.BalancedBracketsGenerator;
+import problems.brackets.BalancedParenthesisGenerator;
 import problems.brackets.BalanceChecker;
 import org.junit.Test;
 import utils.CatalanNumberGenerator;
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by mtumilowicz on 2017-03-29.
  */
-public class BalanceBracketsGeneratorTests {
+public class BalancedParenthesisGeneratorTests {
 
     private BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')','('));
 
@@ -26,7 +26,7 @@ public class BalanceBracketsGeneratorTests {
     }
 
     private void forGivenLength(int pairsNumber) {
-        Set<String> result = BalancedBracketsGenerator.generate(pairsNumber);
+        Set<String> result = BalancedParenthesisGenerator.generate(pairsNumber);
         assertEquals(result.size(), CatalanNumberGenerator.get(pairsNumber));
         // TODO threads
         for (String s : result) {

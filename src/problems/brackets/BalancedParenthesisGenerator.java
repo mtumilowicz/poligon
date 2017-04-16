@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * Created by mtumilowicz on 2017-03-28.
  */
-public class BalancedBracketsGenerator {
+public class BalancedParenthesisGenerator {
 
     public static void print(int pairsNumber) {
         System.out.println(Arrays.toString(generate(pairsNumber).toArray()));

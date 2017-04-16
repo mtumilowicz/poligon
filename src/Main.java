@@ -16,7 +16,7 @@ public class Main {
 //            BalanceChecker balanceChecker2 = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')', '('));
 //            System.out.println(balanceChecker2.check("((()"));
 //
-//            BalancedBracketsGenerator.print(2);
+//            BalancedParenthesisGenerator.print(2);
 //
 //            CombinationWithRepetitionsGenerator.print("(){}", 6);
 //
@@ -26,6 +26,6 @@ public class Main {
 //
 //            TwoArgumentParenthesisGrouper.print("abc");
 //
-//            BalancedPartsRemover.print(")((()())())))(((");
+//            BalancedPartsRemover.print("()");
     }
 }

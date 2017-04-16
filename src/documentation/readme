@@ -12,7 +12,7 @@
 │   │   ├── StringDrawer
 │   ├── problems.brackets
 │   │   ├── BalanceChecker
-│   │   ├── BalancedBracketsGenerator
+│   │   ├── BalancedParenthesisGenerator
 │   │   ├── BalancedPartsRemover
 │   │   ├── BalancedMixedBracketsGenerator
 │   │   ├── BalanceParenthesisChecker
@@ -29,7 +29,7 @@
 -- [SawDrawerFactory](#SawDrawerFactory)  
 **[problems.brackets](#problems.brackets)**  
 -- [BalanceChecker](#BalanceChecker)  
--- [BalancedBracketsGenerator](#BalancedBracketsGenerator)  
+-- [BalancedParenthesisGenerator](#BalancedParenthesisGenerator)  
 -- [BalancedPartsRemover](#BalancedPartsRemover)  
 -- [BalancedMixedBracketsGenerator](#BalancedMixedBracketsGenerator)  
 -- [BalanceParenthesisChecker](#BalanceParenthesisChecker)  
@@ -138,8 +138,8 @@ exact definition, so:
 (()(()()))() - is *balanced*  
 ()))() - is *unbalanced*  
 solution is construct using the stack structure.*
-<a name="BalancedBracketsGenerator"></a>
-* **BalancedBracketsGenerator**
+<a name="BalancedParenthesisGenerator"></a>
+* **BalancedParenthesisGenerator**
 is a solution to the following problem:  
 *For the given number of pairs, generate all possible balanced 
 brackets '(' & ')'. It's very important to have a good approach to such
@@ -159,7 +159,7 @@ is a solution to the following problem:
 *For the given number of pairs generate all balanced (in sense of 
 BalanceChecker) strings containing only: '(', ')', '\[', '\]', '{', '}'. 
 We do it in a hardly inefficient way (take a look at optimal solution in
-BalancedBracketsGenerator - it's hardly impossible to extend this solution
+BalancedParenthesisGenerator - it's hardly impossible to extend this solution
 to the other types of brackets in an easy and smart way, at least in java;
 in haskell you could provide solution just in one line). What is the 
 purpose of this class? We simply try to find a practical application of
@@ -177,6 +177,11 @@ is that after using BalancedPartsRemover we obtain string in the form of
 ))...)((...( - so the minimal number of flips could be analytically 
 calculated.*
 <a name="TwoArgumentParenthesisGrouper"></a>
-* **TwoArgumentBracketsGrouper**
+* **TwoArgumentParenthesisGrouper**
 is a solution to the following problem:  
-*For a given string s, group characters in the brackets*
+*For a given string print all possible groups of its characters in the 
+brackets (bracket is treated as a two-argument operator).  
+For example:  
+ab -> [(ab)]  
+abc -> [(a(bc)), ((ab)c)]  
+abcd -> [(a(b(cd))), (a((bc)d)), ((ab)(cd)), ((a(bc))d), (((ab)c)d)]*
