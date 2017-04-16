@@ -10,7 +10,7 @@ import java.util.Stack;
 /**
  * Created by mtumilowicz on 2017-03-30.
  */
-public class MinimalBracketFlipsToBalance {
+public class MinimalParenthesisFlipToBalance {
 
     public static void print(String str) {
         Objects.requireNonNull(str);
@@ -20,6 +20,7 @@ public class MinimalBracketFlipsToBalance {
     public static long get(String str) {
         Objects.requireNonNull(str);
         Preconditions.checkArgument((str.length() % 2) == 0, "String has to be even.");
+        Preconditions.checkArgument(str.matches("^[()]*$"), "Only '(' & ')' allowed.");
         Stack<Character> afterBalancedRemoval = BalancedPartsRemover.removeAndReturnAsStack(str);
         long openingsCount = afterBalancedRemoval.stream().filter(v -> v.equals('(')).count();
         long endingCount = afterBalancedRemoval.size() - openingsCount;

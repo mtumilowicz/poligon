@@ -15,9 +15,9 @@
 │   │   ├── BalancedBracketsGenerator
 │   │   ├── BalancedPartsRemover
 │   │   ├── BalancedMixedBracketsGenerator
-│   │   ├── BalanceParenthesesChecker
-│   │   ├── MinimalBracketFlipsToBalance
-│   │   ├── TwoArgumentBracketsGrouper
+│   │   ├── BalanceParenthesisChecker
+│   │   ├── MinimalParenthesisFlipToBalance
+│   │   ├── TwoArgumentParenthesisGrouper
 ```
 
 ### links
@@ -27,16 +27,14 @@
 -- [Saw3Drawer](#Saw3Drawer)  
 -- [SawDrawer](#SawDrawer)  
 -- [SawDrawerFactory](#SawDrawerFactory)  
--- [SawDrawerName](#SawDrawerName)  
--- [StringDrawer](#StringDrawer)  
 **[problems.brackets](#problems.brackets)**  
 -- [BalanceChecker](#BalanceChecker)  
 -- [BalancedBracketsGenerator](#BalancedBracketsGenerator)  
 -- [BalancedPartsRemover](#BalancedPartsRemover)  
 -- [BalancedMixedBracketsGenerator](#BalancedMixedBracketsGenerator)  
--- [BalanceParenthesesChecker](#BalanceParenthesesChecker)  
--- [MinimalBracketFlipsToBalance](#MinimalBracketFlipsToBalance)  
--- [TwoArgumentBracketsGrouper](#TwoArgumentBracketsGrouper)
+-- [BalanceParenthesisChecker](#BalanceParenthesisChecker)  
+-- [MinimalParenthesisFlipToBalance](#MinimalParenthesisFlipToBalance)  
+-- [TwoArgumentParenthesisGrouper](#TwoArgumentParenthesisGrouper)
 <a name="drawers.string"></a>
 ## drawers.string
 In this package we provide numerous fancy drawers for given strings.
@@ -155,7 +153,7 @@ is a solution to the following problem:
 sense of BalanceChecker) parts.  
 For example: )((()())())))((( -> )))(((  
 Solution is construct using the stack structure.*
-<a name="BalancedPartsRemover"></a>
+<a name="BalancedMixedBracketsGenerator"></a>
 * **BalancedMixedBracketsGenerator**
 is a solution to the following problem:  
 *For the given number of pairs generate all balanced (in sense of 
@@ -166,3 +164,19 @@ to the other types of brackets in an easy and smart way, at least in java;
 in haskell you could provide solution just in one line). What is the 
 purpose of this class? We simply try to find a practical application of
 CombinationWithRepetitionsGenerator, java8 streams and filter.*
+<a name="BalanceParenthesisChecker"></a>
+* **BalanceParenthesisChecker**
+it's a simplification of BalanceChecker, 
+as a brackets map we use ')' & '('.
+<a name="MinimalParenthesisFlipToBalance"></a>
+* **MinimalParenthesisFlipToBalance**
+is a solution to the following problem:  
+*What is the minimal number of bracket flips (changing '(' -> ')' and 
+vice-versa) to make the string balanced. The most important information
+is that after using BalancedPartsRemover we obtain string in the form of
+))...)((...( - so the minimal number of flips could be analytically 
+calculated.*
+<a name="TwoArgumentParenthesisGrouper"></a>
+* **TwoArgumentBracketsGrouper**
+is a solution to the following problem:  
+*For a given string s, group characters in the brackets*

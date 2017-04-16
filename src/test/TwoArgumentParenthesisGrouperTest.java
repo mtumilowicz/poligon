@@ -3,6 +3,6 @@ package test;
 /**
  * Created by mtumilowicz on 2017-04-12.
  */
-public class TwoArgumentBracketsGrouperTest {
+public class TwoArgumentParenthesisGrouperTest {
 
 }

@@ -8,11 +8,11 @@ import java.util.Objects;
 /**
  * Created by mtumilowicz on 2017-04-06.
  */
-public class TwoArgumentBracketsGrouper {
+public class TwoArgumentParenthesisGrouper {
 
     public static void print(String s) {
         Objects.requireNonNull(s);
-        System.out.println(Arrays.toString(TwoArgumentBracketsGrouper.generate(s).toArray()));
+        System.out.println(Arrays.toString(TwoArgumentParenthesisGrouper.generate(s).toArray()));
     }
 
     public static List<String> generate(String s) {

@@ -22,9 +22,9 @@ public class Main {
 //
 //            BalancedMixedBracketsGenerator.print(3);
 //
-//            MinimalBracketFlipsToBalance.print(")(");
+//            MinimalParenthesisFlipToBalance.print(")(");
 //
-//            TwoArgumentBracketsGrouper.print("abc");
+//            TwoArgumentParenthesisGrouper.print("abc");
 //
 //            BalancedPartsRemover.print(")((()())())))(((");
     }
