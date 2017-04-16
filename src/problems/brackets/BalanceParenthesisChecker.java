@@ -9,6 +9,6 @@ public class BalanceParenthesisChecker {
     private static final BalanceChecker checker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')','('));
 
     public static boolean check(String str) {
-        return checker.check(str);
+        return checker.check(str.replaceAll("[^()]*",""));
     }
 }

@@ -4,10 +4,9 @@ import org.junit.Test;
 import problems.brackets.BalancedParenthesisGenerator;
 import problems.brackets.BalancedPartsRemover;
 
-import java.util.Objects;
 import java.util.Set;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by mtumilowicz on 2017-04-15.
@@ -26,29 +25,29 @@ public class BalancedPartsRemoverTests {
     
     @Test
     public void correctSimpleString() {
-        assertTrue(Objects.equals(BalancedPartsRemover.remove("()"), "empty"));
+        assertEquals(BalancedPartsRemover.remove("()"), "empty");
     }
     
     @Test
     public void correctComplexStrings() {
         Set<String> allBalancedStrings = BalancedParenthesisGenerator.generate(5);
         for (String s : allBalancedStrings) {
-            assertTrue(Objects.equals(BalancedPartsRemover.remove(s),"empty"));
+            assertEquals(BalancedPartsRemover.remove(s),"empty");
         }
     }
     
     @Test
     public void incorrectSimpleString() {
-        assertTrue(Objects.equals(BalancedPartsRemover.remove(")("),")("));
+        assertEquals(BalancedPartsRemover.remove(")("),")(");
     }
 
     @Test
     public void correctInnerSimplePart() {
-        assertTrue(Objects.equals(BalancedPartsRemover.remove(")))()(("),")))(("));
+        assertEquals(BalancedPartsRemover.remove(")))()(("),")))((");
     }
     
     @Test
     public void correctInnerComplexPart() {
-        assertTrue(Objects.equals(BalancedPartsRemover.remove("))(((()()))()(("),"))((("));
+        assertEquals(BalancedPartsRemover.remove("))(((()()))()(("),"))(((");
     }
 }

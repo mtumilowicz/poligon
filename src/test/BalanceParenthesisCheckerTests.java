@@ -35,6 +35,16 @@ public class BalanceParenthesisCheckerTests {
     public void complexUnbalanced() {
         assertFalse(BalanceParenthesisChecker.check(")))((()()))))))()()((())"));
     }
+    
+    @Test
+    public void balancedSimpleStringWithOtherCharacters() {
+        assertTrue(BalanceParenthesisChecker.check("(a(b(c)))"));
+    }
+
+    @Test
+    public void unbalancedSimpleStringWithOtherCharacters() {
+        assertFalse(BalanceParenthesisChecker.check("(a(b(c)))))"));
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testOddLength() {
