@@ -3,7 +3,6 @@ package problems.brackets;
 import com.google.common.base.Preconditions;
 
 import java.util.Iterator;
-import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -12,7 +11,7 @@ import java.util.Stack;
 public class BalancedPartsRemover {
 
     public static void print(String str) {
-        Objects.requireNonNull(str);
+        Preconditions.checkArgument(str != null);
         System.out.println(remove(str));
     }
     
@@ -21,8 +20,7 @@ public class BalancedPartsRemover {
     }
 
     public static Stack<Character> removeAndReturnAsStack(String str) {
-        Objects.requireNonNull(str);
-        Preconditions.checkArgument(str.matches("^[()]*$"), "Only '(' & ')' allowed.");
+        Preconditions.checkArgument(str != null && str.matches("^[()]*$"), "Only '(' & ')' allowed.");
         Stack<Character> stack = new Stack<Character>() {
             public String toString() {
                 Iterator<Character> it = iterator();

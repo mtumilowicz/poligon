@@ -2,16 +2,13 @@ package drawers.string;
 
 import com.google.common.base.Preconditions;
 
-import java.util.Objects;
-
 /**
  * Created by mtumilowicz on 2017-03-22.
  */
 public class SawDrawerFactory {
 
     public static SawDrawer getSawDrawer(SawDrawerName name, String str, int height) {
-        Objects.requireNonNull(name);
-        Objects.requireNonNull(str);
+        Preconditions.checkArgument(name != null && str != null);
         Preconditions.checkArgument(height >= 1);
         SawDrawer sd;
         switch(name){

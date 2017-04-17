@@ -1,5 +1,6 @@
 package utils;
 
+import com.google.common.base.Preconditions;
 import com.google.common.math.BigIntegerMath;
 
 /**
@@ -8,9 +9,7 @@ import com.google.common.math.BigIntegerMath;
 public class CatalanNumberGenerator {
 
     public static int get(int n) {
-        if (n > 50) {
-            throw new IllegalArgumentException("Argument should be less or equal to 10.");
-        }
+        Preconditions.checkArgument(n < 50);
         return (BigIntegerMath.binomial(2*n, n).intValue())/(n+1);
     }
 }

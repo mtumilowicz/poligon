@@ -4,7 +4,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -17,13 +16,12 @@ public class BalanceChecker {
     private final ImmutableMap<Character, Character> balanceBijectionMap;
 
     private BalanceChecker(ImmutableMap<Character, Character> balanceBijectionMap) {
-        Objects.requireNonNull(balanceBijectionMap);
+        Preconditions.checkArgument(balanceBijectionMap != null);
         this.balanceBijectionMap = balanceBijectionMap;
     }
 
     public boolean check(String string) {
-        Objects.requireNonNull(string);
-        Preconditions.checkArgument(string.length() % 2 == 0, "String has to be even!");
+        Preconditions.checkArgument(string != null && string.length() % 2 == 0, "String has to be even!");
         Stack<Character> bracketsStack = new Stack<>();
         for (int i = 0; i<string.length(); i++) {
             char symbol = string.charAt(i);
@@ -54,7 +52,7 @@ public class BalanceChecker {
         }
 
         private static void validateBijection(ImmutableMap<Character, Character> balanceBijectionMap) {
-            Objects.requireNonNull(balanceBijectionMap);
+            Preconditions.checkArgument(balanceBijectionMap != null);
 
             if (balanceBijectionMap.values().size() != (new HashSet<>(balanceBijectionMap.values()).size())) {
                 throw new IllegalArgumentException("Key -> Value is not a bijection!");

@@ -4,7 +4,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.math.LongMath;
 
 import java.math.RoundingMode;
-import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -13,13 +12,12 @@ import java.util.Stack;
 public class MinimalParenthesisFlipToBalance {
 
     public static void print(String str) {
-        Objects.requireNonNull(str);
+        Preconditions.checkArgument(str != null);
         System.out.println(get(str));
     }
 
     public static long get(String str) {
-        Objects.requireNonNull(str);
-        Preconditions.checkArgument((str.length() % 2) == 0, "String has to be even.");
+        Preconditions.checkArgument(str != null && (str.length() % 2) == 0, "String has to be even.");
         Preconditions.checkArgument(str.matches("^[()]*$"), "Only '(' & ')' allowed.");
         Stack<Character> afterBalancedRemoval = BalancedPartsRemover.removeAndReturnAsStack(str);
         long openingsCount = afterBalancedRemoval.stream().filter(v -> v.equals('(')).count();

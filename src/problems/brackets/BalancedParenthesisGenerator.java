@@ -1,8 +1,9 @@
 package problems.brackets;
 
+import com.google.common.base.Preconditions;
+
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -21,8 +22,7 @@ public class BalancedParenthesisGenerator {
     }
 
     private static void construct(Set<String> result, String s, int left, int right) {
-        Objects.requireNonNull(result);
-        Objects.requireNonNull(s);
+        Preconditions.checkArgument(result != null && s != null);
         if (left > right)
             return;
 

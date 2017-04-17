@@ -1,9 +1,10 @@
 package problems.brackets;
 
+import com.google.common.base.Preconditions;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by mtumilowicz on 2017-04-06.
@@ -11,12 +12,12 @@ import java.util.Objects;
 public class TwoArgumentParenthesisGrouper {
 
     public static void print(String s) {
-        Objects.requireNonNull(s);
+        Preconditions.checkArgument(s != null);
         System.out.println(Arrays.toString(TwoArgumentParenthesisGrouper.generate(s).toArray()));
     }
 
     public static List<String> generate(String s) {
-        Objects.requireNonNull(s);
+        Preconditions.checkArgument(s != null);
         if(s.length() == 1) {
             return new LinkedList<>(Arrays.asList(s));
         }
@@ -24,7 +25,7 @@ public class TwoArgumentParenthesisGrouper {
     }
 
     private static List<String> construct(String s) {
-        Objects.requireNonNull(s);
+        Preconditions.checkArgument(s != null);
 
         if(s.length() == 1) {
             return new LinkedList<>(Arrays.asList(s));

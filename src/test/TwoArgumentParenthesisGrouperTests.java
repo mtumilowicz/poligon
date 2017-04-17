@@ -1,21 +1,21 @@
 package test;
 
+import com.google.common.base.Preconditions;
 import org.junit.Test;
 import problems.brackets.BalanceParenthesisChecker;
 import problems.brackets.TwoArgumentParenthesisGrouper;
 import utils.CatalanNumberGenerator;
 
 import java.util.List;
-import java.util.Objects;
 
 import static org.junit.Assert.assertEquals;
 
 /**
  * Created by mtumilowicz on 2017-04-12.
  */
-public class TwoArgumentParenthesisGrouperTest {
+public class TwoArgumentParenthesisGrouperTests {
     
-    @Test(expected = NullPointerException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void nullTest() {
         TwoArgumentParenthesisGrouper.generate(null);
     }
@@ -31,8 +31,8 @@ public class TwoArgumentParenthesisGrouperTest {
     
     
     private void forGivenCatalanNumber(String sb, int i) {
-        Objects.requireNonNull(sb);
-        List<String> list = TwoArgumentParenthesisGrouper.generate(sb.toString());
+        Preconditions.checkArgument(sb != null);
+        List<String> list = TwoArgumentParenthesisGrouper.generate(sb);
         assertEquals(list.size(), CatalanNumberGenerator.get(i));
         BalanceParenthesisChecker.check(list);
     }

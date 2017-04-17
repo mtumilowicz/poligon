@@ -8,7 +8,7 @@ import static junit.framework.TestCase.assertEquals;
 /**
  * Created by mtumilowicz on 2017-04-05.
  */
-public class MinimalParenthesisFlipToBalanceTest {
+public class MinimalParenthesisFlipToBalanceTests {
 
     @Test
     public void empty() {

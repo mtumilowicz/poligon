@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class BalancedPartsRemoverTests {
     
-    @Test(expected = NullPointerException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void emptyTest() {
         BalancedPartsRemover.remove(null);
     }
