@@ -167,10 +167,10 @@ as a brackets map we use ')' & '('.
 * **MinimalParenthesisFlipToBalance**
 is a solution to the following problem:  
 *What is the minimal number of bracket flips (changing '(' -> ')' and 
-vice-versa) to make the string balanced. The most important information
-is that after using BalancedPartsRemover we obtain string in the form of
+vice-versa) to make the string balanced.
+<span style="color:red">Remark: after using BalancedPartsRemover we obtain string in the form of
 ))...)((...( - so the minimal number of flips could be analytically 
-calculated.*
+calculated.</span>*
 <a name="TwoArgumentParenthesisGrouper"></a>
 * **TwoArgumentParenthesisGrouper**
 is a solution to the following problem:  
