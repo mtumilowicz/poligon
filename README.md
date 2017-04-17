@@ -14,7 +14,6 @@
 │   │   ├── BalanceChecker
 │   │   ├── BalancedParenthesisGenerator
 │   │   ├── BalancedPartsRemover
-│   │   ├── BalancedMixedBracketsGenerator
 │   │   ├── BalanceParenthesisChecker
 │   │   ├── MinimalParenthesisFlipToBalance
 │   │   ├── TwoArgumentParenthesisGrouper
@@ -31,7 +30,6 @@
 -- [BalanceChecker](#BalanceChecker)  
 -- [BalancedParenthesisGenerator](#BalancedParenthesisGenerator)  
 -- [BalancedPartsRemover](#BalancedPartsRemover)  
--- [BalancedMixedBracketsGenerator](#BalancedMixedBracketsGenerator)  
 -- [BalanceParenthesisChecker](#BalanceParenthesisChecker)  
 -- [MinimalParenthesisFlipToBalance](#MinimalParenthesisFlipToBalance)  
 -- [TwoArgumentParenthesisGrouper](#TwoArgumentParenthesisGrouper)
@@ -133,8 +131,8 @@ or in the interviews.
 * **BalanceChecker**
 is a solution to the following problem:  
 *For the given string and brackets map decide if string is balanced. It's
-easier to show examples of balanced and unbalanced strings than showing
-exact definition, so:  
+easier to show examples of balanced and unbalanced strings than giving
+exact and precise definition, so:  
 (()(()()))() - is *balanced*  
 ()))() - is *unbalanced*  
 solution is construct using the stack structure.*
@@ -144,26 +142,23 @@ is a solution to the following problem:
 *For the given number of pairs, generate all possible balanced 
 brackets '(' & ')'. It's very important to have a good approach to such
 tasks - producing all possible combinations of '(' & ')' and then filtering
-which combination is balanced, is a very poor solution - we decide to choose 
-different way: construct solution by recursion.*
+which combination is balanced is a very poor and naive solution - 
+we decide to choose different way: construct solution by recursion.  
+<span style="color:red">Remark: we have invented interesting approach to
+test results; usage of CatalanNumbers enables us to test practically 
+any given length.</span>*
 <a name="BalancedPartsRemover"></a>
 * **BalancedPartsRemover**
 is a solution to the following problem:  
 *From the given string containing only '(' & ')' remove all balanced (in 
 sense of BalanceChecker) parts.  
 For example: )((()())())))((( -> )))(((  
-Solution is construct using the stack structure.*
-<a name="BalancedMixedBracketsGenerator"></a>
-* **BalancedMixedBracketsGenerator**
-is a solution to the following problem:  
-*For the given number of pairs generate all balanced (in sense of 
-BalanceChecker) strings containing only: '(', ')', '\[', '\]', '{', '}'. 
-We do it in a hardly inefficient way (take a look at optimal solution in
-BalancedParenthesisGenerator - it's hardly impossible to extend this solution
-to the other types of brackets in an easy and smart way, at least in java;
-in haskell you could provide solution just in one line). What is the 
-purpose of this class? We simply try to find a practical application of
-CombinationWithRepetitionsGenerator, java8 streams and filter.*
+Solution is construct using the 
+<span style="color:blue">stack structure</span>.  
+<span style="color:red">Remark: after removing all balanced 
+parts we get a string: ))...n...)(...m...((,  
+where n & m are the number 
+of brackets ')' & '(' respectively.</span>*
 <a name="BalanceParenthesisChecker"></a>
 * **BalanceParenthesisChecker**
 it's a simplification of BalanceChecker, 
@@ -172,10 +167,10 @@ as a brackets map we use ')' & '('.
 * **MinimalParenthesisFlipToBalance**
 is a solution to the following problem:  
 *What is the minimal number of bracket flips (changing '(' -> ')' and 
-vice-versa) to make the string balanced. The most important information
-is that after using BalancedPartsRemover we obtain string in the form of
+vice-versa) to make the string balanced.
+<span style="color:red">Remark: after using BalancedPartsRemover we obtain string in the form of
 ))...)((...( - so the minimal number of flips could be analytically 
-calculated.*
+calculated.</span>*
 <a name="TwoArgumentParenthesisGrouper"></a>
 * **TwoArgumentParenthesisGrouper**
 is a solution to the following problem:  
