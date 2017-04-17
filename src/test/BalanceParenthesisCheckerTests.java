@@ -3,6 +3,10 @@ package test;
 import problems.brackets.BalanceParenthesisChecker;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedList;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -10,6 +14,18 @@ import static org.junit.Assert.assertTrue;
  * Created by mtumilowicz on 2017-04-05.
  */
 public class BalanceParenthesisCheckerTests {
+    
+    private static Collection<String> balanceBracketStrings = new LinkedList<>(Arrays.asList("", 
+                                                                                           "()", 
+                                                                                           "()()", 
+                                                                                           "()(()(()()))",
+                                                                                           "((((())))())"));
+    
+    private static Collection<String> unbalanceBracketStrings = new LinkedList<>(Arrays.asList("",
+                                                                                             "((",
+                                                                                             "()))",
+                                                                                             "()(()((()))(",
+                                                                                             "(((())))())("));
 
     @Test
     public void empty() {
@@ -49,5 +65,15 @@ public class BalanceParenthesisCheckerTests {
     @Test(expected = IllegalArgumentException.class)
     public void testOddLength() {
         BalanceParenthesisChecker.check(")))");
+    }
+    
+    @Test
+    public void balanceBracketStringList() {
+        assertTrue(BalanceParenthesisChecker.check(balanceBracketStrings));
+    }
+    
+    @Test
+    public void unbalanceBracketStringList() {
+        assertFalse(BalanceParenthesisChecker.check(unbalanceBracketStrings));
     }
 }

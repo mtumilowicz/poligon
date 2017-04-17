@@ -2,6 +2,8 @@ package problems.brackets;
 
 import com.google.common.collect.ImmutableMap;
 
+import java.util.Collection;
+
 /**
  * Created by mtumilowicz on 2017-03-30.
  */
@@ -10,5 +12,10 @@ public class BalanceParenthesisChecker {
 
     public static boolean check(String str) {
         return checker.check(str.replaceAll("[^()]*",""));
+    }
+    
+    public static boolean check(Collection<String> collection) {
+        // TODO threads
+        return collection.stream().allMatch(BalanceParenthesisChecker::check);
     }
 }

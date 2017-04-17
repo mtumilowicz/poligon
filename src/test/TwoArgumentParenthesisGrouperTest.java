@@ -6,8 +6,9 @@ import problems.brackets.TwoArgumentParenthesisGrouper;
 import utils.CatalanNumberGenerator;
 
 import java.util.List;
+import java.util.Objects;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by mtumilowicz on 2017-04-12.
@@ -23,12 +24,16 @@ public class TwoArgumentParenthesisGrouperTest {
     public void severalPrimaryCases() {
         StringBuilder sb = new StringBuilder("aa");
         for (int i = 1; i < 6; i++) {
-            List<String> list = TwoArgumentParenthesisGrouper.generate(sb.toString());
-            assertEquals(list.size(), CatalanNumberGenerator.get(i));
-            for (String s : list) {
-                assertTrue(BalanceParenthesisChecker.check(s));
-            }
+            forGivenCatalanNumber(sb.toString(), i);
             sb.append("a");
         }
+    }
+    
+    
+    private void forGivenCatalanNumber(String sb, int i) {
+        Objects.requireNonNull(sb);
+        List<String> list = TwoArgumentParenthesisGrouper.generate(sb.toString());
+        assertEquals(list.size(), CatalanNumberGenerator.get(i));
+        BalanceParenthesisChecker.check(list);
     }
 }

@@ -1,12 +1,11 @@
 package test;
 
-import com.google.common.collect.ImmutableMap;
-import problems.brackets.BalancedParenthesisGenerator;
-import problems.brackets.BalanceChecker;
 import org.junit.Test;
+import problems.brackets.BalanceParenthesisChecker;
+import problems.brackets.BalancedParenthesisGenerator;
 import utils.CatalanNumberGenerator;
 
-import java.util.Set;
+import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -16,8 +15,6 @@ import static org.junit.Assert.assertTrue;
  */
 public class BalancedParenthesisGeneratorTests {
 
-    private BalanceChecker balanceChecker = BalanceChecker.BalanceCheckerFactory.get(ImmutableMap.of(')','('));
-
     @Test
     public void severalPrimaryCases() {
         for (int i = 1; i <= 7; i++) {
@@ -26,13 +23,8 @@ public class BalancedParenthesisGeneratorTests {
     }
 
     private void forGivenLength(int pairsNumber) {
-        Set<String> result = BalancedParenthesisGenerator.generate(pairsNumber);
+        Collection<String> result = BalancedParenthesisGenerator.generate(pairsNumber);
         assertEquals(result.size(), CatalanNumberGenerator.get(pairsNumber));
-        // TODO threads
-        for (String s : result) {
-            assertTrue(balanceChecker.check(s));
-        }
+        assertTrue(BalanceParenthesisChecker.check(result));
     }
-
-
 }
