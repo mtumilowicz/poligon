@@ -18,10 +18,6 @@ public class Main {
 //
 //            BalancedParenthesisGenerator.print(2);
 //
-//            CombinationWithRepetitionsGenerator.print("(){}", 6);
-//
-//            BalancedMixedBracketsGenerator.print(3);
-//
 //            MinimalParenthesisFlipToBalance.print(")(");
 //
 //            TwoArgumentParenthesisGrouper.print("abc");

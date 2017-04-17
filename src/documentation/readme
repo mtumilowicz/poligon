@@ -14,7 +14,6 @@
 │   │   ├── BalanceChecker
 │   │   ├── BalancedParenthesisGenerator
 │   │   ├── BalancedPartsRemover
-│   │   ├── BalancedMixedBracketsGenerator
 │   │   ├── BalanceParenthesisChecker
 │   │   ├── MinimalParenthesisFlipToBalance
 │   │   ├── TwoArgumentParenthesisGrouper
@@ -31,7 +30,6 @@
 -- [BalanceChecker](#BalanceChecker)  
 -- [BalancedParenthesisGenerator](#BalancedParenthesisGenerator)  
 -- [BalancedPartsRemover](#BalancedPartsRemover)  
--- [BalancedMixedBracketsGenerator](#BalancedMixedBracketsGenerator)  
 -- [BalanceParenthesisChecker](#BalanceParenthesisChecker)  
 -- [MinimalParenthesisFlipToBalance](#MinimalParenthesisFlipToBalance)  
 -- [TwoArgumentParenthesisGrouper](#TwoArgumentParenthesisGrouper)
@@ -161,17 +159,6 @@ Solution is construct using the
 parts we get a string: ))...n...)(...m...((,  
 where n & m are the number 
 of brackets ')' & '(' respectively.</span>*
-<a name="BalancedMixedBracketsGenerator"></a>
-* **BalancedMixedBracketsGenerator**
-is a solution to the following problem:  
-*For the given number of pairs generate all balanced (in sense of 
-BalanceChecker) strings containing only: '(', ')', '\[', '\]', '{', '}'. 
-We do it in a hardly inefficient way (take a look at optimal solution in
-BalancedParenthesisGenerator - it's hardly impossible to extend this solution
-to the other types of brackets in an easy and smart way, at least in java;
-in <span style="color:blue">haskell</span> you could provide solution just in one line). What is the 
-purpose of this class? We simply try to find a practical application of
-CombinationWithRepetitionsGenerator, java8 streams and filter.*
 <a name="BalanceParenthesisChecker"></a>
 * **BalanceParenthesisChecker**
 it's a simplification of BalanceChecker, 
