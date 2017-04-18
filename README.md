@@ -16,6 +16,7 @@
 │   │   ├── BalancedPartsRemover
 │   │   ├── BalanceParenthesisChecker
 │   │   ├── MinimalParenthesisFlipToBalance
+│   │   ├── ParenthesiseMatrixChainToMinimiseMultiplications
 │   │   ├── TwoArgumentParenthesisGrouper
 ```
 
@@ -31,8 +32,10 @@
 -- [BalancedParenthesisGenerator](#BalancedParenthesisGenerator)  
 -- [BalancedPartsRemover](#BalancedPartsRemover)  
 -- [BalanceParenthesisChecker](#BalanceParenthesisChecker)  
--- [MinimalParenthesisFlipToBalance](#MinimalParenthesisFlipToBalance)  
+-- [MinimalParenthesisFlipToBalance](#MinimalParenthesisFlipToBalance)
+-- [ParenthesiseMatrixChainToMinimiseMultiplications](#ParenthesiseMatrixChainToMinimiseMultiplications)
 -- [TwoArgumentParenthesisGrouper](#TwoArgumentParenthesisGrouper)
+**[problems.dates](#problems.dates)**  
 <a name="drawers.string"></a>
 ## drawers.string
 In this package we provide numerous fancy drawers for given strings.
@@ -143,10 +146,10 @@ is a solution to the following problem:
 brackets '(' & ')'. It's very important to have a good approach to such
 tasks - producing all possible combinations of '(' & ')' and then filtering
 which combination is balanced is a very poor and naive solution - 
-we decide to choose different way: construct solution by recursion.  
+we decide to choose different way: construct solution by recursion.*  
 <span style="color:red">Remark: we have invented interesting approach to
 test results; usage of CatalanNumbers enables us to test practically 
-any given length.</span>*
+any given length.</span>
 <a name="BalancedPartsRemover"></a>
 * **BalancedPartsRemover**
 is a solution to the following problem:  
@@ -154,11 +157,11 @@ is a solution to the following problem:
 sense of BalanceChecker) parts.  
 For example: )((()())())))((( -> )))(((  
 Solution is construct using the 
-<span style="color:blue">stack structure</span>.  
+<span style="color:blue">stack structure</span>.*  
 <span style="color:red">Remark: after removing all balanced 
 parts we get a string: ))...n...)(...m...((,  
 where n & m are the number 
-of brackets ')' & '(' respectively.</span>*
+of brackets ')' & '(' respectively.</span>
 <a name="BalanceParenthesisChecker"></a>
 * **BalanceParenthesisChecker**
 it's a simplification of BalanceChecker, 
@@ -167,10 +170,10 @@ as a brackets map we use ')' & '('.
 * **MinimalParenthesisFlipToBalance**
 is a solution to the following problem:  
 *What is the minimal number of bracket flips (changing '(' -> ')' and 
-vice-versa) to make the string balanced.
+vice-versa) to make the string balanced.*  
 <span style="color:red">Remark: after using BalancedPartsRemover we obtain string in the form of
 ))...)((...( - so the minimal number of flips could be analytically 
-calculated.</span>*
+calculated.</span>
 <a name="TwoArgumentParenthesisGrouper"></a>
 * **TwoArgumentParenthesisGrouper**
 is a solution to the following problem:  
@@ -179,4 +182,52 @@ brackets (bracket is treated as a two-argument operator).
 For example:  
 ab -> [(ab)]  
 abc -> [(a(bc)), ((ab)c)]  
-abcd -> [(a(b(cd))), (a((bc)d)), ((ab)(cd)), ((a(bc))d), (((ab)c)d)]*
+abcd -> [(a(b(cd))), (a((bc)d)), ((ab)(cd)), ((a(bc))d), (((ab)c)d)]*  
+<span style="color:red">Remark: we have invented interesting approach to
+test results; usage of CatalanNumbers enables us to test practically 
+any given length.</span>
+# TODO
+<a name="ParenthesiseMatrixChainToMinimiseMultiplications"></a>
+* **ParenthesiseMatrixChainToMinimiseMultiplications** will be a 
+solution to the following problem:  
+[Description on wikipedia](https://en.wikipedia.org/wiki/Matrix_chain_multiplication)  
+*Given a sequence of matrices, find the most efficient way to multiply 
+these matrices.  
+For example:  
+consider matrices: A=10x30, B=30x5, C=5x60  
+computing (AB)C needs (10×30×5) + (10×5×60) = 1500 + 3000 = 4500 
+operations, while  
+computing A(BC) needs (30×5×60) + (10×30×60) = 9000 + 18000 = 27000 
+operations, so we chose (AB)C*
+* **DatePeriodsEmptyPairIntersectionChecker** will be a solution to the 
+following problem:  
+*For a given list of periods <dateFrom, dateTo> decide if intersection 
+of any two of them is empty.*
+* **DatePeriodsMerger** will be a solution to the following problem:  
+*For a given list of periods <dateFrom, dateTo> merge every two with 
+not-empty intersection*
+* **SimpleCollectionOfCollectionsIterator** will be a solution to the
+following problem:  
+*A - is a collection of collections A1,A2,...,AN, where Ak (k=1...N) is 
+a collection of integers. Provide an iterator returning the content of 
+A in a following order: all elements of A1, then all elements of A2, 
+..., finally all elements of AN.  
+For example:  
+A=[A1,A2,A3], A1=[1,2,3], A2=[4,5], A3=[6,7]; result:  
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7.  
+Remark: use generics to easily extends this solution to the String class.*
+* **MasterCollectionOfCollectionsIterator** will be solution to the
+following problem:  
+*For a given collection A of collections A1...AN (Ak could also be 
+collection of collections) provide iterator that hides the nesting and 
+allows us to iterate all of the elements belonging to all of the 
+collections as if you were working with a single collection.*
+* **PecsRealTimeExample** will be solution to the following problem:  
+*Show real time example of PECS (Producer extends and Consumer super) 
+principle.*
+* **TypeErasureProblemExample** will be solution to the following 
+problem:  
+*Provide an example why generics are badly implemented concept in java*
+* **WeakReferencesRealTimeExample** will be solution to the following
+problem:  
+*Provide an real time example where weak references could be used*
