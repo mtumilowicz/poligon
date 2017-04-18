@@ -218,7 +218,7 @@ A=[A1,A2,A3], A1=[1,2,3], A2=[4,5], A3=[6,7]; result:
 Remark: use generics to easily extends this solution to the String class.*
 * **MasterCollectionOfCollectionsIterator** will be solution to the
 following problem:  
-*For a given collection A of collections A1...AN (Ak could also be 
+*Generalization of SimpleCollectionOfCollectionsIterator - for a given collection A of collections A1...AN (Ak could also be 
 collection of collections) provide iterator that hides the nesting and 
 allows us to iterate all of the elements belonging to all of the 
 collections as if you were working with a single collection.*
