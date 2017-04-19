@@ -7,7 +7,7 @@ import com.google.common.base.Preconditions;
  */
 public class SawDrawerFactory {
 
-    public static SawDrawer getSawDrawer(SawDrawerName name, String str, int height) {
+    public static SawDrawer get(SawDrawerName name, String str, int height) {
         Preconditions.checkArgument(name != null && str != null);
         Preconditions.checkArgument(height >= 1);
         SawDrawer sd;

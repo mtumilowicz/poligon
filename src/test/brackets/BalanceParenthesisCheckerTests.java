@@ -1,4 +1,4 @@
-package test;
+package test.brackets;
 
 import problems.brackets.BalanceParenthesisChecker;
 import org.junit.Test;

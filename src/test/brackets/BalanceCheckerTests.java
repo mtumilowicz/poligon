@@ -1,4 +1,4 @@
-package test;
+package test.brackets;
 
 import com.google.common.collect.ImmutableMap;
 import problems.brackets.BalanceChecker;
