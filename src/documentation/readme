@@ -234,3 +234,7 @@ problem:
 * **SoftReferencesRealTimeExample** will be solution to the following 
 problem:  
 *Provide an real time example where soft references could be used*
+* **NestedLevelOfElementInAListOfLists** will be solution to the following 
+problem:  
+*For a given list A of lists A1,A2,...,AN (Ak could be also a list of 
+lists) return the nested level of given element.*
