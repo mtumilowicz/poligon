@@ -15,7 +15,6 @@ public class BalanceParenthesisChecker {
     }
     
     public static boolean check(Collection<String> collection) {
-        // TODO threads
-        return collection.stream().allMatch(BalanceParenthesisChecker::check);
+        return collection.parallelStream().allMatch(BalanceParenthesisChecker::check);
     }
 }
