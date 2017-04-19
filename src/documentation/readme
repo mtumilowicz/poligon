@@ -198,7 +198,10 @@ consider matrices: A=10x30, B=30x5, C=5x60
 computing (AB)C needs (10×30×5) + (10×5×60) = 1500 + 3000 = 4500 
 operations, while  
 computing A(BC) needs (30×5×60) + (10×30×60) = 9000 + 18000 = 27000 
-operations, so we chose (AB)C*
+operations, so we chose (AB)C.  
+Before above task: write evaluator of matrix chain expressions in sense 
+of number of multiplications and then filter the list of all possible 
+balanced parenthesis to find minimum.*
 * **DatePeriodsEmptyPairIntersectionChecker** will be a solution to the 
 following problem:  
 *For a given list of periods <dateFrom, dateTo> decide if intersection 
