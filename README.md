@@ -231,3 +231,6 @@ problem:
 * **WeakReferencesRealTimeExample** will be solution to the following
 problem:  
 *Provide an real time example where weak references could be used*
+* **SoftReferencesRealTimeExample** will be solution to the following 
+problem:  
+*Provide an real time example where soft references could be used*
