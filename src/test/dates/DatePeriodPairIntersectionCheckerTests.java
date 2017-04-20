@@ -46,50 +46,17 @@ public class DatePeriodPairIntersectionCheckerTests {
     private DatePeriod leftDp9 = DatePeriodFactory.get(new Date(1), new Date(2));
     private DatePeriod rightDp9 = DatePeriodFactory.get(new Date(1), new Date(2));
 
-    private DatePeriod leftDpNullDateTo1 = DatePeriodFactory.get(new Date(1), null);
-//    private DatePeriod rightDp1 = DatePeriodFactory.get(new Date(3), new Date(4));
-
-    private DatePeriod leftDpNullDateTo2 = DatePeriodFactory.get(new Date(1), null);
-//    private DatePeriod rightDp2 = DatePeriodFactory.get(new Date(2), new Date(3));
-
-    private DatePeriod leftDpNullDateTo3 = DatePeriodFactory.get(new Date(1), null);
-//    private DatePeriod rightDp3 = DatePeriodFactory.get(new Date(2), new Date(4));
-
-    private DatePeriod leftDpNullDateTo4 = DatePeriodFactory.get(new Date(1), null);
-//    private DatePeriod rightDp4 = DatePeriodFactory.get(new Date(2), new Date(3));
-
-    private DatePeriod leftDpNullDateTo5 = DatePeriodFactory.get(new Date(1), null);
-//    private DatePeriod rightDp5 = DatePeriodFactory.get(new Date(1), new Date(1));
-
 //    private DatePeriod leftDp1 = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightDpNullDateTo1 = DatePeriodFactory.get(new Date(3), null);
+    private DatePeriod rightDp1NullDateTo = DatePeriodFactory.get(new Date(3), null);
 
 //    private DatePeriod leftDp2 = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightDpNullDateTo2 = DatePeriodFactory.get(new Date(2), null);
+    private DatePeriod rightDp2NullDateTo = DatePeriodFactory.get(new Date(2), null);
 
 //    private DatePeriod leftDp3 = DatePeriodFactory.get(new Date(1), new Date(3));
-    private DatePeriod rightDpNullDateTo3 = DatePeriodFactory.get(new Date(2), null);
+    private DatePeriod rightDp3NullDateTo = DatePeriodFactory.get(new Date(2), null);
 
-//    private DatePeriod leftDp4 = DatePeriodFactory.get(new Date(1), new Date(4));
-    private DatePeriod rightDpNullDateTo4 = DatePeriodFactory.get(new Date(2), null);
-
-//    private DatePeriod leftDp5 = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightDpNullDateTo5 = DatePeriodFactory.get(new Date(1), null);
-
-    private DatePeriod leftDpNullDateTo1_ = DatePeriodFactory.get(new Date(1), null);
-    private DatePeriod rightDpNullDateTo1_ = DatePeriodFactory.get(new Date(3), null);
-
-    private DatePeriod leftDpNullDateTo2_ = DatePeriodFactory.get(new Date(1), null);
-    private DatePeriod rightDpNullDateTo2_ = DatePeriodFactory.get(new Date(2), null);
-
-    private DatePeriod leftDpNullDateTo3_ = DatePeriodFactory.get(new Date(1), null);
-    private DatePeriod rightDpNullDateTo3_ = DatePeriodFactory.get(new Date(2), null);
-
-    private DatePeriod leftDpNullDateTo4_ = DatePeriodFactory.get(new Date(1), null);
-    private DatePeriod rightDpNullDateTo4_ = DatePeriodFactory.get(new Date(2), null);
-
-    private DatePeriod leftDpNullDateTo5_ = DatePeriodFactory.get(new Date(1), null);
-    private DatePeriod rightDpNullDateTo5_ = DatePeriodFactory.get(new Date(1), null);
+//    private DatePeriod leftDp4 = DatePeriodFactory.get(new Date(1), new Date(3));
+    private DatePeriod rightDp4NullDateTo = DatePeriodFactory.get(new Date(1), null);
     
     // null notnull
     @Test(expected = IllegalArgumentException.class)
@@ -167,6 +134,30 @@ public class DatePeriodPairIntersectionCheckerTests {
     @Test
     public void isEmptyCorrectOrderEqualsPeriods() {
         assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp9, rightDp9));
+    }
+
+    // [ ] [ ...
+    @Test
+    public void isEmptyCorrectOrderFirstDateToBeforeSecondDateFromSecondDateToNull() {
+        assertTrue(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp1, rightDp1NullDateTo));
+    }
+
+    // [ ][ ...
+    @Test
+    public void isEmptyCorrectOrderFirstDateToEqualsSecondDateFromSecondDateToNull() {
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp2, rightDp2NullDateTo));
+    }
+
+    // [L [P L] P...
+    @Test
+    public void isEmptyCorrectOrderSecondDateFromBeforeNotNullFirstDateToBeforeNullSecondDateTo() {
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp3, rightDp3NullDateTo));
+    }
+
+    // [L[P L] P...
+    @Test
+    public void isEmptyCorrectOrderSecondDateFromEqualsFirstDateFromNotNullFirstDateToBeforeNullSecondDateTo() {
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp4, rightDp4NullDateTo));
     }
     
     @Test(expected = IllegalArgumentException.class)
