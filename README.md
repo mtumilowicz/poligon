@@ -18,6 +18,15 @@
 │   │   ├── MinimalParenthesisFlipToBalance
 │   │   ├── ParenthesiseMatrixChainToMinimiseMultiplications
 │   │   ├── TwoArgumentParenthesisGrouper
+│   ├── problems.dates
+│   │   ├── DateGenerator
+│   │   ├── DatePeriod
+│   │   ├── DatePeriodFactory
+│   │   ├── DatePeriodGenerator
+│   │   ├── DatePeriodPairIntersectionChecker
+│   │   ├── DatePeriodsMerger
+│   │   ├── DatePeriodsSorter
+│   │   ├── EveryPairOfDatePeriodHasEmptyIntersection
 ```
 
 ### links
@@ -32,10 +41,17 @@
 -- [BalancedParenthesisGenerator](#BalancedParenthesisGenerator)  
 -- [BalancedPartsRemover](#BalancedPartsRemover)  
 -- [BalanceParenthesisChecker](#BalanceParenthesisChecker)  
--- [MinimalParenthesisFlipToBalance](#MinimalParenthesisFlipToBalance)
--- [ParenthesiseMatrixChainToMinimiseMultiplications](#ParenthesiseMatrixChainToMinimiseMultiplications)
--- [TwoArgumentParenthesisGrouper](#TwoArgumentParenthesisGrouper)
+-- [MinimalParenthesisFlipToBalance](#MinimalParenthesisFlipToBalance)  
+-- [ParenthesiseMatrixChainToMinimiseMultiplications](#ParenthesiseMatrixChainToMinimiseMultiplications)  
+-- [TwoArgumentParenthesisGrouper](#TwoArgumentParenthesisGrouper)  
 **[problems.dates](#problems.dates)**  
+-- [DateGenerator](#DateGenerator)  
+-- [DatePeriod](#DatePeriod)  
+-- [DatePeriodFactory](#DatePeriodFactory)  
+-- [DatePeriodGenerator](#DatePeriodGenerator)  
+-- [DatePeriodPairIntersectionChecker](#DatePeriodPairIntersectionChecker)  
+-- [DatePeriodsMerger](#DatePeriodsMerger)
+
 <a name="drawers.string"></a>
 ## drawers.string
 In this package we provide numerous fancy drawers for given strings.
@@ -186,6 +202,36 @@ abcd -> [(a(b(cd))), (a((bc)d)), ((ab)(cd)), ((a(bc))d), (((ab)c)d)]*
 <span style="color:red">Remark: we have invented interesting approach to
 test results; usage of CatalanNumbers enables us to test practically 
 any given length.</span>
+<a name="problems.dates"></a>
+
+## problems.dates
+In this package we would like to present solutions to problems & tasks
+concerning dates, that we have spotted during surfing on the internet 
+or in the interviews.
+<a name="DateGenerator"></a> 
+* **DateGenerator** generates random dates in a range approximately 
+*(now-3,5 year; now+3,5)*. To control scope we use parameter *upperBound*, 
+which is interpreted as maximal milliseconds to add or to subtract).
+<a name="DatePeriod"></a>
+* **DatePeriod** is a date interval of type *<dateFrom; dateTo>*. To 
+enforce correct behaviour (*dateFrom* has to be *not null* & 
+*dateFrom <= dateTo*, *dateTo == null* is interpreted as infinity)
+we use private constructor and introduce 
+<a name="DatePeriodFactory"></a> **DatePeriodFactory** where we perform
+appropriate validations. Moreover, DatePeriod is interpreted as a closed
+interval (each end belongs to interval).
+<a name="DatePeriodGenerator"></a>
+* **DatePeriodGenerator** generates random well-formed (in sense of the 
+aftermath of time) DatePeriods.
+<a name="DatePeriodPairIntersectionChecker"></a>
+* **DatePeriodPairIntersectionChecker** is a solution to the following 
+problem:  
+*For a given pair of *DatePeriods*: *(DatePeriod1; DatePeriod2)* decide
+if intersection is empty.*
+<a name="DatePeriodsMerger"></a>
+* **DatePeriodsMerger** is a solution to the following problem:  
+*For a given ArrayList of DatePeriods merge all overlapping elements.*
+
 # TODO
 <a name="ParenthesiseMatrixChainToMinimiseMultiplications"></a>
 * **ParenthesiseMatrixChainToMinimiseMultiplications** will be a 
@@ -202,13 +248,6 @@ operations, so we chose (AB)C.
 Before above task: write evaluator of matrix chain expressions in sense 
 of number of multiplications and then filter the list of all possible 
 balanced parenthesis to find minimum.*
-* **DatePeriodsEmptyPairIntersectionChecker** will be a solution to the 
-following problem:  
-*For a given list of periods <dateFrom, dateTo> decide if intersection 
-of any two of them is empty.*
-* **DatePeriodsMerger** will be a solution to the following problem:  
-*For a given list of periods <dateFrom, dateTo> merge every two with 
-not-empty intersection*
 * **SimpleCollectionOfCollectionsIterator** will be a solution to the
 following problem:  
 *A - is a collection of collections A1,A2,...,AN, where Ak (k=1...N) is 
