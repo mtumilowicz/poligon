@@ -15,7 +15,8 @@ public class DatePeriodGenerator {
     
     public static DatePeriod generate() {
         Date dateFrom;
-        return DatePeriodFactory.get(dateFrom = DateGenerator.generate(), RandomUtils.nextBoolean() ? null : DateGenerator.generateAfter(dateFrom));
+        return DatePeriodFactory.get(dateFrom = DateGenerator.generate(), 
+                RandomUtils.nextBoolean() ? null : DateGenerator.generateAfter(dateFrom));
     }
 
     public static List<DatePeriod> generate(int howMany) {

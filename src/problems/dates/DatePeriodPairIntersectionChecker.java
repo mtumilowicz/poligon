@@ -7,7 +7,7 @@ import com.google.common.base.Preconditions;
  */
 public class DatePeriodPairIntersectionChecker {
     
-    public static boolean isEmptyCorrectOrder(DatePeriod leftPeriod, DatePeriod rightPeriod) {
+    private static boolean isEmptyCorrectOrder(DatePeriod leftPeriod, DatePeriod rightPeriod) {
         Preconditions.checkArgument(leftPeriod != null && rightPeriod != null);
         Preconditions.checkArgument(leftPeriod.getDateFrom() != null && rightPeriod.getDateFrom() != null);
         Preconditions.checkArgument(!leftPeriod.getDateFrom().after(rightPeriod.getDateFrom()));
