@@ -1,5 +1,3 @@
-import problems.dates.DatePeriodsSorter;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -25,8 +23,8 @@ public class Main {
 //            TwoArgumentParenthesisGrouper.print("abc");
 //
 //            BalancedPartsRemover.print("()");
-
-        DatePeriodsSorter.sort(null);
+//
+//            DatePeriodsSorter.sort(null);
         
     }
 }
