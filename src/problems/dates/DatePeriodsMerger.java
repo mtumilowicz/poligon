@@ -34,7 +34,6 @@ public class DatePeriodsMerger {
                 dateFrom = current.getDateFrom();
                 dateTo = current.getDateTo();
             }
-
         }
 
         result.add(DatePeriodFactory.get(dateFrom, dateTo));
