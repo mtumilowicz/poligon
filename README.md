@@ -211,23 +211,23 @@ or in the interviews.
 <a name="DateGenerator"></a> 
 * **DateGenerator** generates random dates in a range approximately 
 *(now-3,5 year; now+3,5)*. To control scope we use parameter *upperBound*, 
-which is interpreted as maximal milliseconds to add or to subtract).
+which is interpreted as maximal number of milliseconds to add or to subtract).
 <a name="DatePeriod"></a>
 * **DatePeriod** is a date interval of type *<dateFrom; dateTo>*. To 
-enforce correct behaviour (*dateFrom* has to be *not null* & 
-*dateFrom <= dateTo*, *dateTo == null* is interpreted as infinity)
-we use private constructor and introduce 
+enforce correct behaviour we use private constructor and introduce 
 <a name="DatePeriodFactory"></a> **DatePeriodFactory** where we perform
-appropriate validations. Moreover, DatePeriod is interpreted as a closed
-interval (each end belongs to interval).
+appropriate validations (*dateFrom* has to be not null & 
+*dateFrom <= dateTo*, null *dateTo* is interpreted as infinity). 
+Moreover, we assume that *DatePeriod* is a closed interval (each end 
+belongs to interval).
 <a name="DatePeriodGenerator"></a>
 * **DatePeriodGenerator** generates random well-formed (in sense of the 
-aftermath of time) DatePeriods.
+time sequence) *DatePeriods*.
 <a name="DatePeriodPairIntersectionChecker"></a>
 * **DatePeriodPairIntersectionChecker** is a solution to the following 
 problem:  
-*For a given pair of *DatePeriods*: *(DatePeriod1; DatePeriod2)* decide
-if intersection is empty.*
+*For a given pair *(DatePeriod1; DatePeriod2)* decide if intersection is 
+empty.*
 <a name="DatePeriodsMerger"></a>
 * **DatePeriodsMerger** is a solution to the following problem:  
 *For a given ArrayList of DatePeriods merge all overlapping elements.*
