@@ -23,10 +23,6 @@ public class Main {
 //            TwoArgumentParenthesisGrouper.print("abc");
 //
 //            BalancedPartsRemover.print("()");
-
-//        List<DatePeriod> generate = DatePeriodGenerator.generateSorted(3);
-//        System.out.println(generate);
-//        System.out.println(IntStream.range(0, generate.size()-1).allMatch(i -> DatePeriodPairIntersectionChecker.isEmpty(generate.get(i),generate.get(i+1))));
-//        System.out.println(DatePeriodPairIntersectionChecker.isEmpty(DatePeriodGenerator.generate(), DatePeriodGenerator.generate()));
+        
     }
 }

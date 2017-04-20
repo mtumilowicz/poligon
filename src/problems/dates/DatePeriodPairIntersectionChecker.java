@@ -6,7 +6,7 @@ package problems.dates;
 public class DatePeriodPairIntersectionChecker {
     
     private static boolean isEmptyCorrectOrder(DatePeriod leftPeriod, DatePeriod rightPeriod) {
-        return leftPeriod.getDateTo() != null && leftPeriod.getDateTo().before(rightPeriod.getDateFrom());
+        return leftPeriod.getDateTo() != null && !leftPeriod.getDateTo().after(rightPeriod.getDateFrom());
     }
     
     public static boolean isEmpty(DatePeriod dp1, DatePeriod dp2) {
