@@ -1,6 +1,6 @@
 package problems.dates;
 
-import test.dates.DateUtil;
+import utils.DateUtil;
 
 import java.util.ArrayList;
 import java.util.Date;

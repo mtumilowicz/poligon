@@ -3,7 +3,7 @@ package test.brackets;
 import problems.brackets.MinimalParenthesisFlipToBalance;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by mtumilowicz on 2017-04-05.

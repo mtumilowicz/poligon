@@ -1,11 +1,9 @@
 package problems.dates;
 
-import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import static problems.dates.DatePeriod.DatePeriodFactory;
 
@@ -19,8 +17,7 @@ public class DatePeriodGenerator {
         return DatePeriodFactory.get(dateFrom = DateGenerator.generate(), RandomUtils.nextBoolean() ? null : DateGenerator.generateAfter(dateFrom));
     }
 
-    public static ArrayList<DatePeriod> generate(int howMany) {
-        Preconditions.checkArgument(howMany > 1);
+    public static ArrayList<DatePeriod> generateArrayList(int howMany) {
         ArrayList<DatePeriod> datePeriods = new ArrayList<>();
         for (int i = 0; i < howMany; i++) {
             datePeriods.add(generate());
@@ -28,7 +25,7 @@ public class DatePeriodGenerator {
         return datePeriods;
     }
     
-    public static List<DatePeriod> generateSorted(int howMany) {
-        return DatePeriodsSorter.sort(generate(howMany));
+    public static ArrayList<DatePeriod> generateSorted(int howMany) {
+        return DatePeriodsSorter.sort(generateArrayList(howMany));
     }
 }

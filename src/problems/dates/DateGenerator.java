@@ -1,5 +1,6 @@
 package problems.dates;
 
+import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.Date;
@@ -20,6 +21,7 @@ public class DateGenerator {
     }
 
     public static Date generateAfter(Date date) {
+        Preconditions.checkArgument(date != null);
         return new Date(Math.abs(date.getTime() + RandomUtils.nextInt() + 1));
     }
 }
