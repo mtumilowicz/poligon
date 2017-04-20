@@ -1,10 +1,7 @@
 package test.dates;
 
 import org.junit.Test;
-import problems.dates.DatePeriod;
 import problems.dates.DatePeriodGenerator;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
 
@@ -15,13 +12,18 @@ public class DatePeriodGeneratorTests {
     
     @Test
     public void testZeroNotNull() {
-        ArrayList<DatePeriod> datePeriods = DatePeriodGenerator.generateArrayList(0);
-        assertTrue(datePeriods != null);
+        assertTrue(DatePeriodGenerator.generate(0) != null);
     }
     
     @Test
     public void testZeroEmpty() {
-        ArrayList<DatePeriod> datePeriods = DatePeriodGenerator.generateArrayList(0);
-        assertTrue(datePeriods.size() == 0);
+        assertTrue(DatePeriodGenerator.generate(0).size() == 0);
+    }
+    
+    @Test
+    public void severalPrimaryCases() {
+        for (int i = 0; i < 10; i++){
+            assertTrue(DatePeriodGenerator.generate(i).size() == i);
+        }
     }
 }

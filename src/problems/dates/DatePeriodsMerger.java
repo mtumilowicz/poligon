@@ -4,6 +4,8 @@ import utils.DateUtil;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 import static problems.dates.DatePeriod.DatePeriodFactory;
 
@@ -16,12 +18,12 @@ public class DatePeriodsMerger {
         System.out.println(merge(datePeriods));
     }
     
-    public static ArrayList<DatePeriod> merge(ArrayList<DatePeriod> datePeriods) {
+    public static List<DatePeriod> merge(ArrayList<DatePeriod> datePeriods) {
         DatePeriod first = datePeriods.get(0);
         Date dateFrom = first.getDateFrom();
         Date dateTo = first.getDateTo();
 
-        ArrayList<DatePeriod> result = new ArrayList<>();
+        List<DatePeriod> result = new LinkedList<>();
 
         for (int i = 1; i < datePeriods.size(); i++) {
             DatePeriod current = datePeriods.get(i);
