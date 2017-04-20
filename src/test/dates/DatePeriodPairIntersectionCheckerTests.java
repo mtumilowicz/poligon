@@ -1,7 +1,6 @@
 package test.dates;
 
 import org.junit.Test;
-import problems.dates.DatePeriod;
 import problems.dates.DatePeriodPairIntersectionChecker;
 
 import java.util.Date;
@@ -9,60 +8,12 @@ import java.util.Date;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static problems.dates.DatePeriod.DatePeriodFactory;
+import static utils.DatePeriodsCreatedContainer.*;
 
 /**
  * Created by mtumilowicz on 2017-04-20.
  */
 public class DatePeriodPairIntersectionCheckerTests {
-    
-    private DatePeriod notNullDatePeriod = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod leftPeriod = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightPeriod = DatePeriodFactory.get(new Date(3), new Date(4));
-    
-    private DatePeriod leftDp1 = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightDp1 = DatePeriodFactory.get(new Date(3), new Date(4));
-
-    private DatePeriod leftDp2 = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightDp2 = DatePeriodFactory.get(new Date(2), new Date(3));
-
-    private DatePeriod leftDp3 = DatePeriodFactory.get(new Date(1), new Date(3));
-    private DatePeriod rightDp3 = DatePeriodFactory.get(new Date(2), new Date(4));
-
-    private DatePeriod leftDp4 = DatePeriodFactory.get(new Date(1), new Date(3));
-    private DatePeriod rightDp4 = DatePeriodFactory.get(new Date(1), new Date(4));
-
-    private DatePeriod leftDp5 = DatePeriodFactory.get(new Date(1), new Date(3));
-    private DatePeriod rightDp5 = DatePeriodFactory.get(new Date(2), new Date(3));
-
-    private DatePeriod leftDp6 = DatePeriodFactory.get(new Date(1), new Date(4));
-    private DatePeriod rightDp6 = DatePeriodFactory.get(new Date(2), new Date(3));
-
-    private DatePeriod leftDp7 = DatePeriodFactory.get(new Date(1), new Date(4));
-    private DatePeriod rightDp7 = DatePeriodFactory.get(new Date(1), new Date(3));
-
-    private DatePeriod leftDp8 = DatePeriodFactory.get(new Date(1), new Date(4));
-    private DatePeriod rightDp8 = DatePeriodFactory.get(new Date(2), new Date(4));
-
-    private DatePeriod leftDp9 = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightDp9 = DatePeriodFactory.get(new Date(1), new Date(2));
-
-//    private DatePeriod leftDp1 = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightDp1NullDateTo = DatePeriodFactory.get(new Date(3), null);
-
-//    private DatePeriod leftDp2 = DatePeriodFactory.get(new Date(1), new Date(2));
-    private DatePeriod rightDp2NullDateTo = DatePeriodFactory.get(new Date(2), null);
-
-//    private DatePeriod leftDp3 = DatePeriodFactory.get(new Date(1), new Date(3));
-    private DatePeriod rightDp3NullDateTo = DatePeriodFactory.get(new Date(2), null);
-
-//    private DatePeriod leftDp4 = DatePeriodFactory.get(new Date(1), new Date(3));
-    private DatePeriod rightDp4NullDateTo = DatePeriodFactory.get(new Date(1), null);
-
-    private DatePeriod leftDp3NullDateTo = DatePeriodFactory.get(new Date(1), null);
-//    private DatePeriod rightDp3 = DatePeriodFactory.get(new Date(2), new Date(4));
-
-    private DatePeriod leftDp4NullDateTo = DatePeriodFactory.get(new Date(1), null);
-//    private DatePeriod rightDp4 = DatePeriodFactory.get(new Date(1), new Date(4));
     
     // null notnull
     @Test(expected = IllegalArgumentException.class)
