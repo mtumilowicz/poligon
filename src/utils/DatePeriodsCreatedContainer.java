@@ -17,6 +17,8 @@ public class DatePeriodsCreatedContainer {
     public static DatePeriod period_2_4 = DatePeriod.DatePeriodFactory.get(new Date(2), new Date(4));
     
     public static DatePeriod period_3_4 = DatePeriod.DatePeriodFactory.get(new Date(3), new Date(4));
+
+    public static DatePeriod period_4_5 = DatePeriod.DatePeriodFactory.get(new Date(4), new Date(5));
     
     public static DatePeriod period_1_oo = DatePeriod.DatePeriodFactory.get(new Date(1), null);
     public static DatePeriod period_2_oo = DatePeriod.DatePeriodFactory.get(new Date(2), null);
