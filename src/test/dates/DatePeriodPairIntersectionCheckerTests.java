@@ -18,127 +18,127 @@ public class DatePeriodPairIntersectionCheckerTests {
     // null notnull
     @Test(expected = IllegalArgumentException.class)
     public void isEmptyCorrectOrderLeftPeriodNullTest() {
-        DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(null, notNullDatePeriod);
+        DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(null, period_1_2);
     }
 
     // notnull null
     @Test(expected = IllegalArgumentException.class)
     public void isEmptyCorrectOrderRightPeriodNullTest() {
-        DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(notNullDatePeriod, null);
+        DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_2, null);
     }
 
     // incorrect order
     @Test(expected = IllegalArgumentException.class)
     public void isEmptyIncorrectOrderNotNullTest() {
-        DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(rightPeriod, leftPeriod);
+        DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_3_4, period_1_2);
     }
     
     // samePeriod samePeriod
     @Test
     public void isEmptyCorrectOrderSameDatesNotNullTest() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftPeriod, leftPeriod));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_2, period_1_2));
     }
     
     // [ ] [ ]
     @Test
     public void isEmptyCorrectOrderFirstDateToBeforeSecondDateFrom() {
-        assertTrue(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp1, rightDp1));
+        assertTrue(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_2, period_3_4));
     }
 
     // [ ][ ]
     @Test
     public void isEmptyCorrectOrderFirstDateToEqualsSecondDateFrom() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp2, rightDp2));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_2, period_2_3));
     }
 
     // [L [P L] P]
     @Test
     public void isEmptyCorrectOrderSecondDateFromBeforeNotNullFirstDateToBeforeNotNullSecondDateTo() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp3, rightDp3));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_3, period_2_4));
     }
 
     // [L[P L] P]
     @Test
     public void isEmptyCorrectOrderSecondDateFromEqualsFirstDateFromNotNullFirstDateToBeforeNotNullSecondDateTo() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp4, rightDp4));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_3, period_1_4));
     }
 
     // [L [P L]P]
     @Test
     public void isEmptyCorrectOrderSecondDateFromAfterFirstDateFromFirstDateToEqualsSecondDateTo() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp5, rightDp5));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_3, period_2_3));
     }
 
     // [L [P P] L]
     @Test
     public void isEmptyCorrectOrderSecondInsideFirst() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp6, rightDp6));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_4, period_2_3));
     }
 
     // [L[P P] L]
     @Test
     public void isEmptyCorrectOrderSecondInsideFirstAndFirstDateFromEqualsSecondDateFrom() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp7, rightDp7));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_4, period_1_3));
     }
 
     // [L [P P]L]
     @Test
     public void isEmptyCorrectOrderSecondInsideFirstAndFirstDateToEqualsSecondDateTo() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp8, rightDp8));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_4, period_2_4));
     }
 
     // [[ ]]
     @Test
     public void isEmptyCorrectOrderEqualsPeriods() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp9, rightDp9));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_2, period_1_2));
     }
 
     // [ ] [ ...
     @Test
     public void isEmptyCorrectOrderFirstDateToBeforeSecondDateFromSecondDateToNull() {
-        assertTrue(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp1, rightDp1NullDateTo));
+        assertTrue(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_2, period_3_oo));
     }
 
     // [ ][ ...
     @Test
     public void isEmptyCorrectOrderFirstDateToEqualsSecondDateFromSecondDateToNull() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp2, rightDp2NullDateTo));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_2, period_2_oo));
     }
 
     // [L [P L] P...
     @Test
     public void isEmptyCorrectOrderSecondDateFromBeforeNotNullFirstDateToBeforeNullSecondDateTo() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp3, rightDp3NullDateTo));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_3, period_2_oo));
     }
 
     // [L[P L] P...
     @Test
     public void isEmptyCorrectOrderSecondDateFromEqualsFirstDateFromNotNullFirstDateToBeforeNullSecondDateTo() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp4, rightDp4NullDateTo));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_3, period_1_oo));
     }
 
     // [L [P P] L...
     @Test
     public void isEmptyInsideFirstAndNullFirstDateTo() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp3NullDateTo, rightDp3));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_oo, period_2_4));
     }
 
     // [L[P P] L...
     @Test
     public void isEmptyInsideFirstAndNullFirstDateToAndFirstDateFromEqualsSecondDateFrom() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp4NullDateTo, rightDp4));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_oo, period_1_4));
     }
 
     // [L [P P] L...
     @Test
     public void isEmptyInsideFirstAndNullDatesTo() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp3NullDateTo, rightDp3NullDateTo));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_oo, period_2_oo));
     }
 
     // [L[P P] L...
     @Test
     public void isEmptyInsideFirstAndNullDatesToAndEqualsDatesFrom() {
-        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(leftDp4NullDateTo, rightDp4NullDateTo));
+        assertFalse(DatePeriodPairIntersectionChecker.isEmptyCorrectOrder(period_1_oo, period_1_oo));
     }
     
     @Test(expected = IllegalArgumentException.class)
