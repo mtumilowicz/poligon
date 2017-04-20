@@ -22,6 +22,6 @@ public class DateGenerator {
 
     public static Date generateAfter(Date date) {
         Preconditions.checkArgument(date != null);
-        return new Date(Math.abs(date.getTime() + RandomUtils.nextInt() + 1));
+        return new Date(Math.abs(date.getTime() + RandomUtils.nextLong() + 1));
     }
 }
