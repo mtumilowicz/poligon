@@ -29,9 +29,8 @@
 │   │   ├── EveryPairOfDatePeriodHasEmptyIntersection
 │   ├── problems.duplicates
 │   │   ├── DuplicatesRemover
-│   │   ├── FindMissingIntInAnArrayOfConsecutiveIntegersFromOne
+│   │   ├── FindMissingIntInAnArithmeticSequence
 │   │   ├── FindUniqueIntInAnArrayOfTwins
-│   │   ├── FindMissingIntInAnArrayOfConsecutiveIntegersFromOne
 │   │   ├── IntegerDuplicatesRemover
 │   │   ├── IntegerOccurrencesCounter
 │   │   ├── OccurrencesCounter
@@ -61,7 +60,7 @@
 -- [DatePeriodsMerger](#DatePeriodsMerger)  
 **[problems.duplicates](#problems.duplicates)**  
 -- [DuplicatesRemover](#DuplicatesRemover)  
--- [FindMissingIntInAnArrayOfConsecutiveIntegersFromOne](#FindMissingIntInAnArrayOfConsecutiveIntegersFromOne)  
+-- [FindMissingIntInAnArithmeticSequence](#FindMissingIntInAnArithmeticSequence)  
 -- [FindUniqueIntInAnArrayOfTwins](#FindUniqueIntInAnArrayOfTwins)  
 -- [OccurrencesCounter](#OccurrencesCounter)  
 
@@ -265,8 +264,8 @@ counting of elements and extra need of memory - we just use XOR.
 More challenging question is how to find unique int in an array of 
 triplets and, more generally, in an array of any-prime-number 
 repetitions (very hard).
-<a name="FindMissingIntInAnArrayOfConsecutiveIntegersFromOne"></a>
-* **FindMissingIntInAnArrayOfConsecutiveIntegersFromOne** is a solution
+<a name="FindMissingIntInAnArithmeticSequence"></a>
+* **FindMissingIntInAnArithmeticSequence** is a solution
 to the following problem:  
 *For a given int sequence (1,2,...,k-1,k+1...,n) find the missing 
 int k.  
@@ -274,8 +273,9 @@ Remark: it's crucial to have a proper way of attacking such questions -
 by using XOR we should reduce this issue to the solved problem 
 right above (FindUniqueIntInAnArrayOfTwins):  
 (1,...,n) XOR (1,2,...,k-1,k+1...,n) = k.  
-**Remark: TODO:** it's very easy to extend this solution to every array 
-containing arithmetic sequence, starting at given int.*
+**Remark:** it's very easy to extend that approach to every array 
+containing arithmetic sequence starting at given int - and we have 
+shipped that extension.*
 <a name="OccurrencesCounter"></a>
 * **OccurrencesCounter** it's simply java8 features and generics 
 showcase.
