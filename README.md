@@ -27,6 +27,13 @@
 │   │   ├── DatePeriodsMerger
 │   │   ├── DatePeriodsSorter
 │   │   ├── EveryPairOfDatePeriodHasEmptyIntersection
+│   ├── problems.duplicates
+│   │   ├── DuplicatesRemover
+│   │   ├── FindMissingIntInAnArithmeticSequence
+│   │   ├── FindUniqueIntInAnArrayOfTwins
+│   │   ├── IntegerDuplicatesRemover
+│   │   ├── IntegerOccurrencesCounter
+│   │   ├── OccurrencesCounter
 ```
 
 ### links
@@ -50,7 +57,12 @@
 -- [DatePeriodFactory](#DatePeriodFactory)  
 -- [DatePeriodGenerator](#DatePeriodGenerator)  
 -- [DatePeriodPairIntersectionChecker](#DatePeriodPairIntersectionChecker)  
--- [DatePeriodsMerger](#DatePeriodsMerger)
+-- [DatePeriodsMerger](#DatePeriodsMerger)  
+**[problems.duplicates](#problems.duplicates)**  
+-- [DuplicatesRemover](#DuplicatesRemover)  
+-- [FindMissingIntInAnArithmeticSequence](#FindMissingIntInAnArithmeticSequence)  
+-- [FindUniqueIntInAnArrayOfTwins](#FindUniqueIntInAnArrayOfTwins)  
+-- [OccurrencesCounter](#OccurrencesCounter)  
 
 <a name="drawers.string"></a>
 ## drawers.string
@@ -202,9 +214,10 @@ abcd -> [(a(b(cd))), (a((bc)d)), ((ab)(cd)), ((a(bc))d), (((ab)c)d)]*
 <span style="color:red">Remark: we have invented interesting approach to
 test results; usage of CatalanNumbers enables us to test practically 
 any given length.</span>
-<a name="problems.dates"></a>
 
+<a name="problems.dates"></a>
 ## problems.dates
+
 In this package we would like to present solutions to problems & tasks
 concerning dates, that we have spotted during surfing on the internet 
 or in the interviews.
@@ -231,6 +244,47 @@ empty.*
 <a name="DatePeriodsMerger"></a>
 * **DatePeriodsMerger** is a solution to the following problem:  
 *For a given ArrayList of DatePeriods merge all overlapping elements.*
+
+<a name="problems.duplicates"></a>
+## problems.duplicates
+Main reason of implementing this package is to show how to deal with 
+java generics concept - we try to expose its versatility and power, for 
+example by writing generics tests. We want to present some java8 
+features that are quite natural and very helpful in solving similar 
+problems.
+<a name="DuplicatesRemover"></a>
+* **DuplicatesRemover** the most important thing in solving this problem
+is to use *LinkedHashSet* instead of *HashSet*, because there is no 
+guarantee that the *HashSet* maintains order. Not using *LinkedHashSet*
+is a most frequent flaw in an approach to such problems.
+<a name="FindUniqueIntInAnArrayOfTwins"></a>
+* **FindUniqueIntInAnArrayOfTwins** it's one of my favourite questions
+from the interviews. This problem could be solved without additional 
+counting of elements and extra need of memory - we just use XOR.  
+More challenging question is how to find unique int in an array of 
+triplets and, more generally, in an array of any-prime-number 
+repetitions (very hard).
+<a name="FindMissingIntInAnArithmeticSequence"></a>
+* **FindMissingIntInAnArithmeticSequence** is a solution
+to the following problem:  
+*For a given int sequence (1,2,...,k-1,k+1...,n) find the missing 
+int k.  
+Remark: it's crucial to have a proper way of attacking such questions - 
+by using XOR we should reduce this issue to the solved problem 
+right above (FindUniqueIntInAnArrayOfTwins):  
+(1,...,n) XOR (1,2,...,k-1,k+1...,n) = k.  
+The worst way of solving that problem is by evaluating sum of all ints
+1 ... n = (1 + n / 2) * n then subtracting sum of all elements from the 
+given array. However the answer will be wanted k, but we could easily 
+extend the int range (take for example sequence (2147483640, 2147483642)
+obviously 2147483641 is missing, but the range during summing will be 
+exceeded).
+**Remark:** it's very easy to extend that approach to every array 
+containing arithmetic sequence starting at given int - and we, indeed, 
+have shipped that extension.*
+<a name="OccurrencesCounter"></a>
+* **OccurrencesCounter** it's simply java8 features and generics 
+showcase.
 
 # TODO
 <a name="ParenthesiseMatrixChainToMinimiseMultiplications"></a>
