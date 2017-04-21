@@ -278,7 +278,7 @@ The worst way of solving that problem is by evaluating sum of all ints
 given array. However the answer will be wanted k, but we could easily 
 extend the int range (take for example sequence (2147483640, 2147483642)
 obviously 2147483641 is missing, but the range during summing will be 
-exceeded).
+exceeded).  
 **Remark:** it's very easy to extend that approach to every array 
 containing arithmetic sequence starting at given int - and we, indeed, 
 have shipped that extension.*
