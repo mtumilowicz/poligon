@@ -273,15 +273,15 @@ Remark: it's crucial to have a proper way of attacking such questions -
 by using XOR we should reduce this issue to the solved problem 
 right above (FindUniqueIntInAnArrayOfTwins):  
 (1,...,n) XOR (1,2,...,k-1,k+1...,n) = k.  
-The worst way of solving that problem is by evaluating sum of all ints
+**Remark:** it's very easy to extend that approach to every array 
+containing arithmetic sequence starting at given int - and we, indeed, 
+have shipped that extension.  
+**Remark:** The worst way of solving that problem is by evaluating sum of all ints
 1 ... n = (1 + n / 2) * n then subtracting sum of all elements from the 
 given array. However the answer will be wanted k, but we could easily 
 extend the int range (take for example sequence (2147483640, 2147483642)
 obviously 2147483641 is missing, but the range during summing will be 
-exceeded).  
-**Remark:** it's very easy to extend that approach to every array 
-containing arithmetic sequence starting at given int - and we, indeed, 
-have shipped that extension.*
+exceeded).*  
 <a name="OccurrencesCounter"></a>
 * **OccurrencesCounter** it's simply java8 features and generics 
 showcase.
