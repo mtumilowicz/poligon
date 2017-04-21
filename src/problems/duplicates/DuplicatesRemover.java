@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by mtumilowicz on 2017-04-20.
  */
-public class RemoveDuplicatesFromList<E> {
+public class DuplicatesRemover<E> {
     public static <E> List<E> remove(List<E> list) {
         Preconditions.checkArgument(list != null);
         return new LinkedList<>(new LinkedHashSet<>(list));

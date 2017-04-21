@@ -27,6 +27,10 @@
 │   │   ├── DatePeriodsMerger
 │   │   ├── DatePeriodsSorter
 │   │   ├── EveryPairOfDatePeriodHasEmptyIntersection
+│   ├── problems.duplicates
+│   │   ├── FindUniqueIntInAnArrayOfTwins
+│   │   ├── RemoveDuplicatesFromList
+│   │   ├── RemoveIntegerDuplicatesFromList
 ```
 
 ### links
@@ -280,6 +284,3 @@ problem:
 problem:  
 *For a given list A of lists A1,A2,...,AN (Ak could be also a list of 
 lists) return the nested level of given element.*
-* **RemoveDuplicatesFromList** will be solution to the following 
-problem:  
-*Remove duplicates from list.*
