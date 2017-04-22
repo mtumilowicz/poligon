@@ -34,6 +34,10 @@
 │   │   ├── IntegerDuplicatesRemover
 │   │   ├── IntegerOccurrencesCounter
 │   │   ├── OccurrencesCounter
+│   ├── problems.primes
+│   │   ├── CountPrimes
+│   │   ├── Sieve
+│   │   ├── SumPrimes
 ```
 
 ### links
@@ -63,6 +67,10 @@
 -- [FindMissingIntInAnArithmeticSequence](#FindMissingIntInAnArithmeticSequence)  
 -- [FindUniqueIntInAnArrayOfTwins](#FindUniqueIntInAnArrayOfTwins)  
 -- [OccurrencesCounter](#OccurrencesCounter)  
+**[problems.primes](#problems.primes)**  
+-- [CountPrimes](#CountPrimes)  
+-- [Sieve](#Sieve)  
+-- [SumPrimes](#SumPrimes)  
 
 <a name="drawers.string"></a>
 ## drawers.string
@@ -281,10 +289,45 @@ have shipped that extension.
 given array. However the answer will be wanted k, but we could easily 
 extend the int range (take for example sequence (2147483640, 2147483642)
 obviously 2147483641 is missing, but the range during summing will be 
-exceeded).*  
+exceeded).*
 <a name="OccurrencesCounter"></a>
 * **OccurrencesCounter** it's simply java8 features and generics 
-showcase.
+showcase.  
+
+<a name="problems.primes"></a>
+## problems.primes
+Prime numbers are the core concept & one of the most interesting 
+concepts of mathematics, however solutions to issues concerning 
+them have highly inefficient implementations. Therefore we decide to 
+show the proper way of implementing of couple most known problems.
+<a name="CountPrimes"></a>
+* **CountPrimes** is a solution to the following problem:  
+*For a given closed interval <lowerBound; upperBound> count prime 
+numbers.  
+For example:  
+<2; 3> -> 2,  
+<2; 5> -> 3,  
+<2; 7> -> 4,  
+<2; 11> -> 5.  
+First step of solving is to generate sieve of Erastotenes (every prime 
+is marked as true, every composite as false), then we propagate sum 
+through the array, to obtain:  
+[0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1] -> 
+[0, 0, 1, 2, 2, 3, 3, 4, 4, 4, 4, 5, 5, 6].  
+After that to have number of primes in the interval <a; b> we have to 
+only subtract: sieve[b] - sieve[a-1]. Every other approach that 
+presented above is either wasting memory or multiple evaluation of once 
+computed values.*
+<a name="Sieve"></a>
+* **Sieve** is an implementation of 
+[Erastotenes' sieve](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+.
+<a name="SumPrimes"></a>
+* **SumPrimes** is a solution to the following problem:  
+*For a given closed interval <lowerBound; upperBound> sum all prime 
+numbers.  
+To solve it in the most optimal way, we use the same idea as in 
+**CountPrimes**.*
 
 # TODO
 <a name="ParenthesiseMatrixChainToMinimiseMultiplications"></a>
