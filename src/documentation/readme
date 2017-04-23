@@ -377,3 +377,17 @@ problem:
 problem:  
 *For a given list A of lists A1,A2,...,AN (Ak could be also a list of 
 lists) return the nested level of given element.*
+* **NestedLevelOfElementInAListOfLists** will be solution to the following 
+problem:  
+*For a given map and given int k print k keys that have k-top values, 
+for example:  
+(<"a", 2>,<"b", 5>,<"c", 3>,<"d", 4>,<"e", 1>,<"f", 6>), 3 -> "f", "b", 
+"d".  
+Remark: Easily extend to low-k values.*  
+* **BinaryGap** will be solution to the following problem:  
+*Find longest sequence of zeros in binary representation of an 
+integer.*  
+* **CyclicRotation** will be solution to the following problem:  
+*Rotate an array to the right by a given number of steps.*
+* **PermCheck** will be solution to the following problem:  
+*Check whether array A is a permutation.*
