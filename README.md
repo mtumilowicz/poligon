@@ -10,6 +10,10 @@
 │   │   ├── SawDrawerFactory
 │   │   ├── SawDrawerName
 │   │   ├── StringDrawer
+│   ├── problems.arrays
+│   │   ├── CyclicRotation
+│   │   ├── ExtremeArrayValues
+│   │   ├── PermCheck
 │   ├── problems.brackets
 │   │   ├── BalanceChecker
 │   │   ├── BalancedParenthesisGenerator
@@ -34,6 +38,10 @@
 │   │   ├── IntegerDuplicatesRemover
 │   │   ├── IntegerOccurrencesCounter
 │   │   ├── OccurrencesCounter
+│   ├── problems.maps
+│   │   ├── LinkedMapsComparator
+│   │   ├── MapPrinter
+│   │   ├── MapSorter
 │   ├── problems.primes
 │   │   ├── CountPrimes
 │   │   ├── Sieve
@@ -47,6 +55,9 @@
 -- [Saw3Drawer](#Saw3Drawer)  
 -- [SawDrawer](#SawDrawer)  
 -- [SawDrawerFactory](#SawDrawerFactory)  
+**[problems.arrays](#problems.arrays)**  
+-- [CyclicRotation](#CyclicRotation)  
+-- [PermCheck](#PermCheck)  
 **[problems.brackets](#problems.brackets)**  
 -- [BalanceChecker](#BalanceChecker)  
 -- [BalancedParenthesisGenerator](#BalancedParenthesisGenerator)  
@@ -67,6 +78,9 @@
 -- [FindMissingIntInAnArithmeticSequence](#FindMissingIntInAnArithmeticSequence)  
 -- [FindUniqueIntInAnArrayOfTwins](#FindUniqueIntInAnArrayOfTwins)  
 -- [OccurrencesCounter](#OccurrencesCounter)  
+**[problems.maps](#problems.maps)**  
+-- [LinkedMapsComparator](#LinkedMapsComparator)  
+-- [MapSorter](#MapSorter)  
 **[problems.primes](#problems.primes)**  
 -- [CountPrimes](#CountPrimes)  
 -- [Sieve](#Sieve)  
@@ -160,12 +174,30 @@ We want to have full control over creation of instances of different saw
 drawers so we have to use **SawDrawerFactory**. Furthermore - in this 
 factory we perform field validation (much more natural than in the 
 appropriate constructors).
+<a name="problems.arrays"></a>
+## problems.arrays
+
+<a name="CyclicRotation"></a>
+* **CyclicRotation**
+is a solution to the following problem:  
+*For the given array and shiftOrder move all elements to the right by 
+shiftOrder places.  
+For example:  
+1) array = (1,2,3,4,5,6), order = 3 -> (4,5,6,1,2,3)  
+2) array = (1,2,3,4,5,6), order = 2 -> (5,6,1,2,3,4)*
+
+<a name="PermCheck"></a>
+* **PermCheck**
+is a solution to the following problem:  
+*Check if the given array is a permutation of some consecutive integers
+set.  
+For example: (2,1,4,3,5) is a permutation of (1,2,3,4,5), but (2,1,3,5)
+is not permutation of any consecutive integers set -> number 4 is 
+missing.*
+
 <a name="problems.brackets"></a>
 ## problems.brackets
 
-In this package we would like to present solutions to problems & tasks
-concerning brackets, that we have spotted during surfing on the internet 
-or in the interviews.
 <a name="BalanceChecker"></a>
 * **BalanceChecker**
 is a solution to the following problem:  
@@ -226,9 +258,6 @@ any given length.</span>
 <a name="problems.dates"></a>
 ## problems.dates
 
-In this package we would like to present solutions to problems & tasks
-concerning dates, that we have spotted during surfing on the internet 
-or in the interviews.
 <a name="DateGenerator"></a> 
 * **DateGenerator** generates random dates in a range approximately 
 *(now-3,5 year; now+3,5)*. To control scope we use parameter *upperBound*, 
@@ -294,12 +323,26 @@ exceeded).*
 * **OccurrencesCounter** it's simply java8 features and generics 
 showcase.  
 
+<a name="problems.maps"></a>
+## problems.maps
+
+<a name="LinkedMapsComparator"></a>
+* **LinkedMapsComparator** is a solution to the following problem:  
+*For given two linkedHashMaps: A and B, compare not only elements but also
+order. The default equals in LinkedHashMap comes from AbstractMap, so 
+it's useless.*
+<a name="MapSorter"></a>
+* **MapSorter** is a solution to the following problem:  
+*For a given map A<K, V>, where V extends Comparable<V>, sort A by 
+values using java 8 api. We provide much more flexible solution - we 
+sort map A with any legitimate comparator of entries.   
+We have to return LinkedHashMap - it's the only
+way of providing correct entry order.*
+
+
 <a name="problems.primes"></a>
 ## problems.primes
-Prime numbers are the core concept & one of the most interesting 
-concepts of mathematics, however solutions to issues concerning 
-them have highly inefficient implementations. Therefore we decide to 
-show the proper way of implementing of couple most known problems.
+
 <a name="CountPrimes"></a>
 * **CountPrimes** is a solution to the following problem:  
 *For a given closed interval <lowerBound; upperBound> count prime 
@@ -383,11 +426,4 @@ problem:
 for example:  
 (<"a", 2>,<"b", 5>,<"c", 3>,<"d", 4>,<"e", 1>,<"f", 6>), 3 -> "f", "b", 
 "d".  
-Remark: Easily extend to low-k values.*  
-* **BinaryGap** will be solution to the following problem:  
-*Find longest sequence of zeros in binary representation of an 
-integer.*  
-* **CyclicRotation** will be solution to the following problem:  
-*Rotate an array to the right by a given number of steps.*
-* **PermCheck** will be solution to the following problem:  
-*Check whether array A is a permutation.*
+Remark: Easily extend to low-k values.*
