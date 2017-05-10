@@ -5,7 +5,7 @@ import problems.dates.DatePeriodPairIntersectionChecker;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static utils.DatePeriodsCreatedContainer.*;
+import static utils.DatePeriodsContainer.*;
 
 /**
  * Created by mtumilowicz on 2017-04-20.

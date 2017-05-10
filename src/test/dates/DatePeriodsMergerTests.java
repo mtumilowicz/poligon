@@ -9,7 +9,7 @@ import java.util.LinkedList;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static utils.DatePeriodsCreatedContainer.*;
+import static utils.DatePeriodsContainer.*;
 
 /**
  * Created by mtumilowicz on 2017-04-20.

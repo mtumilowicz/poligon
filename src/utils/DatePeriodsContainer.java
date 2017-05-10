@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by mtumilowicz on 2017-04-20.
  */
-public class DatePeriodsCreatedContainer {
+public class DatePeriodsContainer {
     
     public static DatePeriod period_1_2 = DatePeriod.DatePeriodFactory.get(new Date(1), new Date(2));
     public static DatePeriod period_1_3 = DatePeriod.DatePeriodFactory.get(new Date(1), new Date(3));
