@@ -25,7 +25,7 @@ public class CyclicRotation {
         return reverse(reversedFirstAndSecondPart, 0, copy.length - 1);
     }
 
-    public static int[] reverse(int[] a, int left, int right) {
+    private static int[] reverse(int[] a, int left, int right) {
         Preconditions.checkArgument(a != null && a.length > 0);
         Preconditions.checkArgument(left >= 0);
         Preconditions.checkArgument(right <= a.length);

@@ -13,7 +13,7 @@ public class ExtremeArrayValues {
         
         int min = a[0];
         for (int v : a) {
-            if (min < v) {
+            if (v < min) {
                 min = v;
             }
         }
@@ -26,7 +26,7 @@ public class ExtremeArrayValues {
         
         int max = a[0];
         for (int v : a) {
-            if (max > v) {
+            if (v > max) {
                 max = v;
             }
         }
