@@ -33,7 +33,7 @@
 │   │   ├── EveryPairOfDatePeriodHasEmptyIntersection
 │   ├── problems.duplicates
 │   │   ├── DuplicatesRemover
-│   │   ├── FindMissingIntInAnArithmeticSequence
+│   │   ├── FindMissingIntInShuffledArithmeticSequence
 │   │   ├── FindUniqueIntInAnArrayOfTwins
 │   │   ├── IntegerDuplicatesRemover
 │   │   ├── IntegerOccurrencesCounter
@@ -75,7 +75,7 @@
 -- [DatePeriodsMerger](#DatePeriodsMerger)  
 **[problems.duplicates](#problems.duplicates)**  
 -- [DuplicatesRemover](#DuplicatesRemover)  
--- [FindMissingIntInAnArithmeticSequence](#FindMissingIntInAnArithmeticSequence)  
+-- [FindMissingIntInShuffledArithmeticSequence](#FindMissingIntInShuffledArithmeticSequence)  
 -- [FindUniqueIntInAnArrayOfTwins](#FindUniqueIntInAnArrayOfTwins)  
 -- [OccurrencesCounter](#OccurrencesCounter)  
 **[problems.maps](#problems.maps)**  
@@ -184,7 +184,7 @@ is a solution to the following problem:
 shiftOrder places.  
 For example:  
 1) array = (1,2,3,4,5,6), order = 3 -> (4,5,6,1,2,3)  
-2) array = (1,2,3,4,5,6), order = 2 -> (5,6,1,2,3,4)*
+2) array = (1,2,3,4,5,6), order = 2 -> (5,6,1,2,3,4).*
 
 <a name="PermCheck"></a>
 * **PermCheck**
@@ -301,15 +301,15 @@ counting of elements and extra need of memory - we just use XOR.
 More challenging question is how to find unique int in an array of 
 triplets and, more generally, in an array of any-prime-number 
 repetitions (very hard).
-<a name="FindMissingIntInAnArithmeticSequence"></a>
-* **FindMissingIntInAnArithmeticSequence** is a solution
+<a name="FindMissingIntInShuffledArithmeticSequence"></a>
+* **FindMissingIntInShuffledArithmeticSequence** is a solution
 to the following problem:  
-*For a given int sequence (1,2,...,k-1,k+1...,n) find the missing 
+*For a given int sequence shuffle(1,2,...,k-1,k+1...,n) find the missing 
 int k.  
 Remark: it's crucial to have a proper way of attacking such questions - 
 by using XOR we should reduce this issue to the solved problem 
 right above (FindUniqueIntInAnArrayOfTwins):  
-(1,...,n) XOR (1,2,...,k-1,k+1...,n) = k.  
+(1,...,n) XOR shuffle(1,2,...,k-1,k+1...,n) = k.  
 **Remark:** it's very easy to extend that approach to every array 
 containing arithmetic sequence starting at given int - and we, indeed, 
 have shipped that extension.  
@@ -426,4 +426,4 @@ problem:
 for example:  
 (<"a", 2>,<"b", 5>,<"c", 3>,<"d", 4>,<"e", 1>,<"f", 6>), 3 -> "f", "b", 
 "d".  
-Remark: Easily extend to low-k values.*
+Remark: Easily extend to low-k values.* 

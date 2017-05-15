@@ -5,7 +5,7 @@ import com.google.common.base.Preconditions;
 /**
  * Created by mtumilowicz on 2017-04-21.
  */
-public class FindMissingIntInAnArithmeticSequence {
+public class FindMissingIntInShuffledArithmeticSequence {
     public static int find(int[] array, int base, int diff) {
         Preconditions.checkArgument(array != null);
         Preconditions.checkArgument(array.length > 1);
