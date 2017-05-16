@@ -388,22 +388,15 @@ operations, so we chose (AB)C.
 Before above task: write evaluator of matrix chain expressions in sense 
 of number of multiplications and then filter the list of all possible 
 balanced parenthesis to find minimum.*
-* **SimpleCollectionOfCollectionsIterator** will be a solution to the
+* **IterablesMerger** will be a solution to the
 following problem:  
-*A - is a collection of collections A1,A2,...,AN, where Ak (k=1...N) is 
-a collection of integers. Provide an iterator returning the content of 
-A in a following order: all elements of A1, then all elements of A2, 
-..., finally all elements of AN.  
+*We have N Iterables: A1,A2,...,AN. Provide an merged iterator enabling 
+us to traverse content of union A1,A2,...,AN in a following order: 
+first - all elements of A1, then all elements of A2, ..., finally all 
+elements of AN.  
 For example:  
-A=[A1,A2,A3], A1=[1,2,3], A2=[4,5], A3=[6,7]; result:  
-1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7.  
-Remark: use generics to easily extends this solution to the String class.*
-* **MasterCollectionOfCollectionsIterator** will be solution to the
-following problem:  
-*Generalization of SimpleCollectionOfCollectionsIterator - for a given collection A of collections A1...AN (Ak could also be 
-collection of collections) provide iterator that hides the nesting and 
-allows us to iterate all of the elements belonging to all of the 
-collections as if you were working with a single collection.*
+A1=[1->2->3], A2=[4->5], A3=[6->7]; result:  
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7.*  
 * **PecsRealTimeExample** will be solution to the following problem:  
 *Show real time example of PECS (Producer extends and Consumer super) 
 principle.*
