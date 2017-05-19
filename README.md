@@ -38,6 +38,9 @@
 │   │   ├── IntegerDuplicatesRemover
 │   │   ├── IntegerOccurrencesCounter
 │   │   ├── OccurrencesCounter
+│   ├── problems.iterators
+│   │   ├── IterablesMerger
+│   │   ├── IteratorsComparator
 │   ├── problems.maps
 │   │   ├── LinkedMapsComparator
 │   │   ├── MapPrinter
@@ -78,6 +81,9 @@
 -- [FindMissingIntInShuffledArithmeticSequence](#FindMissingIntInShuffledArithmeticSequence)  
 -- [FindUniqueIntInAnArrayOfTwins](#FindUniqueIntInAnArrayOfTwins)  
 -- [OccurrencesCounter](#OccurrencesCounter)  
+**[problems.iterators](#problems.iterators)**  
+-- [IterablesMerger](#IterablesMerger)  
+-- [IteratorsComparator](#IteratorsComparator)  
 **[problems.maps](#problems.maps)**  
 -- [LinkedMapsComparator](#LinkedMapsComparator)  
 -- [MapSorter](#MapSorter)  
@@ -323,6 +329,27 @@ exceeded).*
 * **OccurrencesCounter** it's simply java8 features and generics 
 showcase.  
 
+<a name="problems.iterators"></a>
+## problems.iterators
+
+<a name="IterablesMerger"></a>
+* **IterablesMerger** is a solution to the
+following problem:  
+*We have N Iterables: A1,A2,...,AN. Provide an merged iterator enabling 
+us to traverse content of union A1,A2,...,AN in a following order: 
+first - all elements of A1, then all elements of A2, ..., finally all 
+elements of AN.  
+For example:  
+A1=[1->2->3], A2=[4->5], A3=[6->7];  
+result: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7.*  
+
+<a name="IteratorsComparator"></a>
+* **IteratorsComparator** is a solution to the
+following problem:  
+*Two Iterators are equal then and only then if they represent the same 
+elements in the same order and the same length (the same number of 
+elements)*  
+
 <a name="problems.maps"></a>
 ## problems.maps
 
@@ -388,15 +415,6 @@ operations, so we chose (AB)C.
 Before above task: write evaluator of matrix chain expressions in sense 
 of number of multiplications and then filter the list of all possible 
 balanced parenthesis to find minimum.*
-* **IterablesMerger** will be a solution to the
-following problem:  
-*We have N Iterables: A1,A2,...,AN. Provide an merged iterator enabling 
-us to traverse content of union A1,A2,...,AN in a following order: 
-first - all elements of A1, then all elements of A2, ..., finally all 
-elements of AN.  
-For example:  
-A1=[1->2->3], A2=[4->5], A3=[6->7]; result:  
-1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7.*  
 * **PecsRealTimeExample** will be solution to the following problem:  
 *Show real time example of PECS (Producer extends and Consumer super) 
 principle.*
