@@ -3,7 +3,6 @@ package test.duplicates;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by mtumilowicz on 2017-04-21.
