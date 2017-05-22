@@ -388,7 +388,7 @@ firstly described by Joshua Bloch in a book Effective Java. The PECS
 rule states good practices of using wildcards, for example - in APIs 
 design.  
 I found out PECS principle when I was searching the Internet for the 
-answer to the following question:  
+answer to the following apparent inconsistency:  
 Why in the Collections class we have:  
 addAll(Collection<**? super T**> c, T... elements)  
 while in the Collection we have:  
