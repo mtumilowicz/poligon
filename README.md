@@ -45,6 +45,19 @@
 │   │   ├── LinkedMapsComparator
 │   │   ├── MapPrinter
 │   │   ├── MapSorter
+│   ├── problems.pecs
+│   │   ├── controller
+│   │   │   ├── ReportController
+│   │   ├── dao
+│   │   │   ├── BasicReportDAO
+│   │   │   ├── ExtendedReportDAO
+│   │   │   ├── FleetReportDAO
+│   │   ├── reports
+│   │   │   ├── BasicReport
+│   │   │   ├── ExtendedReport
+│   │   │   ├── FleetReport
+│   │   │   ├── Report
+│   │   ├── DatabaseMock
 │   ├── problems.primes
 │   │   ├── CountPrimes
 │   │   ├── Sieve
@@ -87,6 +100,8 @@
 **[problems.maps](#problems.maps)**  
 -- [LinkedMapsComparator](#LinkedMapsComparator)  
 -- [MapSorter](#MapSorter)  
+**[problems.pecs](#problems.pecs)**  
+-- [ReportController](#ReportController)  
 **[problems.primes](#problems.primes)**  
 -- [CountPrimes](#CountPrimes)  
 -- [Sieve](#Sieve)  
@@ -366,6 +381,24 @@ sort map A with any legitimate comparator of entries.
 We have to return LinkedHashMap - it's the only
 way of providing correct entry order.*
 
+<a name="problems.pecs"></a>
+## problems.pecs
+*PECS (Producer Extends Consumer Super) it's a mnemonic principle 
+firstly described by Joshua Bloch in a book Effective Java. The PECS 
+rule states good practices of using wildcards, for example - in APIs 
+design.  
+I found out PECS principle when I was searching the Internet for the 
+answer to the following question:  
+Why in the Collections class we have:  
+addAll(Collection<**? super T**> c, T... elements)  
+while in the Collection we have:  
+addAll(Collection<**? extends E**> c).*
+<a name="ReportController"></a>
+* **ReportController**:  in this class, we have three similar methods, so
+we are going to describe only one of them:  
+addBasicReports(Collection<**? super BasicReport**> c, 
+Collection<**? extends BasicReport**> elements).
+In above declaration, **c** is consumer and **elements** are producers.
 
 <a name="problems.primes"></a>
 ## problems.primes
@@ -415,12 +448,6 @@ operations, so we chose (AB)C.
 Before above task: write evaluator of matrix chain expressions in sense 
 of number of multiplications and then filter the list of all possible 
 balanced parenthesis to find minimum.*
-* **PecsRealTimeExample** will be solution to the following problem:  
-*Show real time example of PECS (Producer extends and Consumer super) 
-principle.*
-* **TypeErasureProblemExample** will be solution to the following 
-problem:  
-*Provide an example why generics are badly implemented concept in java*
 * **WeakReferencesRealTimeExample** will be solution to the following
 problem:  
 *Provide an real time example where weak references could be used*
