@@ -1,8 +1,8 @@
-package problems.pecs.reports;
+package problems.pecs;
 
-import problems.pecs.reports.types.BasicReport;
-import problems.pecs.reports.types.ExtendedReport;
-import problems.pecs.reports.types.FleetReport;
+import problems.pecs.reports.BasicReport;
+import problems.pecs.reports.ExtendedReport;
+import problems.pecs.reports.FleetReport;
 
 import java.util.Arrays;
 import java.util.LinkedList;

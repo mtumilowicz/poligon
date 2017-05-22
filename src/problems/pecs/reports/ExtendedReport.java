@@ -1,4 +1,4 @@
-package problems.pecs.reports.types;
+package problems.pecs.reports;
 
 /**
  * Created by mtumilowicz on 2017-05-20.

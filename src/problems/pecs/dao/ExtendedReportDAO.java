@@ -1,7 +1,7 @@
-package problems.pecs.reports.dao;
+package problems.pecs.dao;
 
-import problems.pecs.reports.DatabaseMock;
-import problems.pecs.reports.types.ExtendedReport;
+import problems.pecs.DatabaseMock;
+import problems.pecs.reports.ExtendedReport;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
-package problems.pecs.reports.controller;
+package problems.pecs.controller;
 
 import com.google.common.base.Preconditions;
-import problems.pecs.reports.types.BasicReport;
-import problems.pecs.reports.types.ExtendedReport;
-import problems.pecs.reports.types.FleetReport;
-import problems.pecs.reports.dao.BasicReportDAO;
-import problems.pecs.reports.dao.ExtendedReportDAO;
-import problems.pecs.reports.dao.FleetReportDAO;
+import problems.pecs.reports.BasicReport;
+import problems.pecs.reports.ExtendedReport;
+import problems.pecs.reports.FleetReport;
+import problems.pecs.dao.BasicReportDAO;
+import problems.pecs.dao.ExtendedReportDAO;
+import problems.pecs.dao.FleetReportDAO;
 
 import java.util.Collection;
 
