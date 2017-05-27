@@ -448,12 +448,6 @@ operations, so we chose (AB)C.
 Before above task: write evaluator of matrix chain expressions in sense 
 of number of multiplications and then filter the list of all possible 
 balanced parenthesis to find minimum.*
-* **WeakReferencesRealTimeExample** will be solution to the following
-problem:  
-*Provide an real time example where weak references could be used*
-* **SoftReferencesRealTimeExample** will be solution to the following 
-problem:  
-*Provide an real time example where soft references could be used*
 * **NestedLevelOfElementInAListOfLists** will be solution to the following 
 problem:  
 *For a given list A of lists A1,A2,...,AN (Ak could be also a list of 
