@@ -3,13 +3,14 @@ package problems.dates;
 import com.google.common.base.Preconditions;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by mtumilowicz on 2017-04-19.
  */
 public class DatePeriod implements Comparable<DatePeriod> {
-    private Date dateFrom;
-    private Date dateTo;
+    private final Date dateFrom;
+    private final Date dateTo;
 
     private DatePeriod(Date dateFrom, Date dateTo) {
         this.dateFrom = dateFrom;
@@ -28,17 +29,14 @@ public class DatePeriod implements Comparable<DatePeriod> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         DatePeriod that = (DatePeriod) o;
-
-        return (dateFrom != null ? dateFrom.equals(that.dateFrom) : that.dateFrom == null) && (dateTo != null ? dateTo.equals(that.dateTo) : that.dateTo == null);
+        return Objects.equals(dateFrom, that.dateFrom) &&
+                Objects.equals(dateTo, that.dateTo);
     }
 
     @Override
     public int hashCode() {
-        int result = dateFrom != null ? dateFrom.hashCode() : 0;
-        result = 31 * result + (dateTo != null ? dateTo.hashCode() : 0);
-        return result;
+        return Objects.hash(dateFrom, dateTo);
     }
 
     @Override
