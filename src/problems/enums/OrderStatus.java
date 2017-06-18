@@ -1,6 +1,6 @@
 package problems.enums;
 
-import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 
 import java.util.Arrays;
 
@@ -11,38 +11,38 @@ public enum OrderStatus {
     
     NEW {
         @Override
-        public ImmutableList<OrderStatus> getNextStatus() {
-            return ImmutableList.copyOf(Arrays.asList(IN_PROGRESS, REJECTED));
+        public ImmutableSet<OrderStatus> getNextStatuses() {
+            return ImmutableSet.copyOf(Arrays.asList(IN_PROGRESS, REJECTED));
         }
     },
     IN_PROGRESS {
         @Override
-        public ImmutableList<OrderStatus> getNextStatus() {
-            return ImmutableList.copyOf(Arrays.asList(FILLED, REJECTED));
+        public ImmutableSet<OrderStatus> getNextStatuses() {
+            return ImmutableSet.copyOf(Arrays.asList(FILLED, REJECTED));
         }
     },
     FILLED {
         @Override
-        public ImmutableList<OrderStatus> getNextStatus() {
-            return ImmutableList.copyOf(Arrays.asList(CLOSED));
+        public ImmutableSet<OrderStatus> getNextStatuses() {
+            return ImmutableSet.copyOf(Arrays.asList(CLOSED));
         }
     },
     CLOSED {
         @Override
-        public ImmutableList<OrderStatus> getNextStatus() {
-            return ImmutableList.of();
+        public ImmutableSet<OrderStatus> getNextStatuses() {
+            return ImmutableSet.of();
         }
     },
     REJECTED {
         @Override
-        public ImmutableList<OrderStatus> getNextStatus() {
-            return ImmutableList.of();
+        public ImmutableSet<OrderStatus> getNextStatuses() {
+            return ImmutableSet.of();
         }
     };
     
-    public abstract ImmutableList<OrderStatus> getNextStatus();
+    public abstract ImmutableSet<OrderStatus> getNextStatuses();
     
     public boolean isPossible(OrderStatus status) {
-        return getNextStatus().contains(status);
+        return getNextStatuses().contains(status);
     }
 }
