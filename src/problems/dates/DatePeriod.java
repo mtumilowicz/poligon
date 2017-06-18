@@ -18,11 +18,11 @@ public class DatePeriod implements Comparable<DatePeriod> {
     }
 
     public Date getDateFrom() {
-        return dateFrom;
+        return new Date(dateFrom.getTime());
     }
 
     public Date getDateTo() {
-        return dateTo;
+        return dateTo != null ? new Date(dateTo.getTime()) : null;
     }
 
     @Override
@@ -57,7 +57,10 @@ public class DatePeriod implements Comparable<DatePeriod> {
             Preconditions.checkArgument(dateFrom != null);
             Preconditions.checkArgument(dateTo == null || dateFrom.before(dateTo));
             
-            return new DatePeriod(dateFrom, dateTo);
+            Date dateFromCopy = new Date(dateFrom.getTime());
+            Date dateToCopy = dateTo != null ? new Date(dateTo.getTime()) : null;
+            
+            return new DatePeriod(dateFromCopy, dateToCopy);
         }
     }
 }
