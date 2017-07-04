@@ -199,17 +199,14 @@ appropriate constructors).
 ## problems.arrays
 
 <a name="CyclicRotation"></a>
-* **CyclicRotation**
-is a solution to the following problem:  
+* **CyclicRotation**  
 *For the given array and shiftOrder move all elements to the right by 
 shiftOrder places.  
 For example:  
 1) array = (1,2,3,4,5,6), order = 3 -> (4,5,6,1,2,3)  
 2) array = (1,2,3,4,5,6), order = 2 -> (5,6,1,2,3,4).*
-
 <a name="PermCheck"></a>
-* **PermCheck**
-is a solution to the following problem:  
+* **PermCheck**  
 *Check if the given array is a permutation of some consecutive integers
 set.  
 For example: (2,1,4,3,5) is a permutation of (1,2,3,4,5), but (2,1,3,5)
@@ -220,8 +217,7 @@ missing.*
 ## problems.brackets
 
 <a name="BalanceChecker"></a>
-* **BalanceChecker**
-is a solution to the following problem:  
+* **BalanceChecker**  
 *For the given string and brackets map decide if string is balanced. It's
 easier to show examples of balanced and unbalanced strings than giving
 exact and precise definition, so:  
@@ -229,8 +225,7 @@ exact and precise definition, so:
 ()))() - is *unbalanced*  
 solution is construct using the stack structure.*
 <a name="BalancedParenthesisGenerator"></a>
-* **BalancedParenthesisGenerator**
-is a solution to the following problem:  
+* **BalancedParenthesisGenerator**  
 *For the given number of pairs, generate all possible balanced 
 brackets '(' & ')'. It's very important to have a good approach to such
 tasks - producing all possible combinations of '(' & ')' and then filtering
@@ -240,8 +235,7 @@ we decide to choose different way: construct solution by recursion.*
 test results; usage of CatalanNumbers enables us to test practically 
 any given length.</span>
 <a name="BalancedPartsRemover"></a>
-* **BalancedPartsRemover**
-is a solution to the following problem:  
+* **BalancedPartsRemover**  
 *From the given string containing only '(' & ')' remove all balanced (in 
 sense of BalanceChecker) parts.  
 For example: )((()())())))((( -> )))(((  
@@ -256,16 +250,14 @@ of brackets ')' & '(' respectively.</span>
 it's a simplification of BalanceChecker, 
 as a brackets map we use ')' & '('.
 <a name="MinimalParenthesisFlipToBalance"></a>
-* **MinimalParenthesisFlipToBalance**
-is a solution to the following problem:  
+* **MinimalParenthesisFlipToBalance**  
 *What is the minimal number of bracket flips (changing '(' -> ')' and 
 vice-versa) to make the string balanced.*  
 <span style="color:red">Remark: after using BalancedPartsRemover we obtain string in the form of
 ))...)((...( - so the minimal number of flips could be analytically 
 calculated.</span>
 <a name="TwoArgumentParenthesisGrouper"></a>
-* **TwoArgumentParenthesisGrouper**
-is a solution to the following problem:  
+* **TwoArgumentParenthesisGrouper**  
 *For a given string print all possible groups of its characters in the 
 brackets (bracket is treated as a two-argument operator).  
 For example:  
@@ -295,12 +287,11 @@ belongs to interval).
 * **DatePeriodGenerator** generates random well-formed (in sense of the 
 time sequence) *DatePeriods*.
 <a name="DatePeriodPairIntersectionChecker"></a>
-* **DatePeriodPairIntersectionChecker** is a solution to the following 
-problem:  
+* **DatePeriodPairIntersectionChecker**  
 *For a given pair *(DatePeriod1; DatePeriod2)* decide if intersection is 
 empty.*
 <a name="DatePeriodsMerger"></a>
-* **DatePeriodsMerger** is a solution to the following problem:  
+* **DatePeriodsMerger**  
 *For a given ArrayList of DatePeriods merge all overlapping elements.*
 
 <a name="problems.duplicates"></a>
@@ -323,8 +314,7 @@ More challenging question is how to find unique int in an array of
 triplets and, more generally, in an array of any-prime-number 
 repetitions (very hard).
 <a name="FindMissingIntInShuffledArithmeticSequence"></a>
-* **FindMissingIntInShuffledArithmeticSequence** is a solution
-to the following problem:  
+* **FindMissingIntInShuffledArithmeticSequence**  
 *For a given int sequence shuffle(1,2,...,k-1,k+1...,n) find the missing 
 int k.  
 Remark: it's crucial to have a proper way of attacking such questions - 
@@ -348,8 +338,7 @@ showcase.
 ## problems.iterators
 
 <a name="IterablesMerger"></a>
-* **IterablesMerger** is a solution to the
-following problem:  
+* **IterablesMerger**  
 *We have N Iterables: A1,A2,...,AN. Provide an merged iterator enabling 
 us to traverse content of union A1,A2,...,AN in a following order: 
 first - all elements of A1, then all elements of A2, ..., finally all 
@@ -359,8 +348,7 @@ A1=[1->2->3], A2=[4->5], A3=[6->7];
 result: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7.*  
 
 <a name="IteratorsComparator"></a>
-* **IteratorsComparator** is a solution to the
-following problem:  
+* **IteratorsComparator**  
 *Two Iterators are equal then and only then if they represent the same 
 elements in the same order and the same length (the same number of 
 elements)*  
@@ -369,12 +357,12 @@ elements)*
 ## problems.maps
 
 <a name="LinkedMapsComparator"></a>
-* **LinkedMapsComparator** is a solution to the following problem:  
+* **LinkedMapsComparator**  
 *For given two linkedHashMaps: A and B, compare not only elements but also
 order. The default equals in LinkedHashMap comes from AbstractMap, so 
 it's useless.*
 <a name="MapSorter"></a>
-* **MapSorter** is a solution to the following problem:  
+* **MapSorter**  
 *For a given map A<K, V>, where V extends Comparable<V>, sort A by 
 values using java 8 api. We provide much more flexible solution - we 
 sort map A with any legitimate comparator of entries.   
@@ -404,7 +392,7 @@ In above declaration, **c** is consumer and **elements** are producers.
 ## problems.primes
 
 <a name="CountPrimes"></a>
-* **CountPrimes** is a solution to the following problem:  
+* **CountPrimes**  
 *For a given closed interval <lowerBound; upperBound> count prime 
 numbers.  
 For example:  
@@ -426,7 +414,7 @@ computed values.*
 [Erastotenes' sieve](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 .
 <a name="SumPrimes"></a>
-* **SumPrimes** is a solution to the following problem:  
+* **SumPrimes**  
 *For a given closed interval <lowerBound; upperBound> sum all prime 
 numbers.  
 To solve it in the most optimal way, we use the same idea as in 
@@ -434,8 +422,7 @@ To solve it in the most optimal way, we use the same idea as in
 
 # TODO
 <a name="ParenthesiseMatrixChainToMinimiseMultiplications"></a>
-* **ParenthesiseMatrixChainToMinimiseMultiplications** will be a 
-solution to the following problem:  
+* **ParenthesiseMatrixChainToMinimiseMultiplications**  
 [Description on wikipedia](https://en.wikipedia.org/wiki/Matrix_chain_multiplication)  
 *Given a sequence of matrices, find the most efficient way to multiply 
 these matrices.  
@@ -448,7 +435,6 @@ operations, so we chose (AB)C.
 Before above task: write evaluator of matrix chain expressions in sense 
 of number of multiplications and then filter the list of all possible 
 balanced parenthesis to find minimum.*
-* **NestedLevelOfElementInAListOfLists** will be solution to the following 
-problem:  
+* **NestedLevelOfElementInAListOfLists**  
 *For a given list A of lists A1,A2,...,AN (Ak could be also a list of 
 lists) return the nested level of given element.*
