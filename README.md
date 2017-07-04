@@ -201,17 +201,17 @@ appropriate constructors).
 <a name="CyclicRotation"></a>
 * **CyclicRotation**  
 *For the given array and shiftOrder move all elements to the right by 
-shiftOrder places.  
+shiftOrder places.*  
 For example:  
 1) array = (1,2,3,4,5,6), order = 3 -> (4,5,6,1,2,3)  
-2) array = (1,2,3,4,5,6), order = 2 -> (5,6,1,2,3,4).*
+2) array = (1,2,3,4,5,6), order = 2 -> (5,6,1,2,3,4).
 <a name="PermCheck"></a>
 * **PermCheck**  
 *Check if the given array is a permutation of some consecutive integers
-set.  
+set.*  
 For example: (2,1,4,3,5) is a permutation of (1,2,3,4,5), but (2,1,3,5)
 is not permutation of any consecutive integers set -> number 4 is 
-missing.*
+missing.
 
 <a name="problems.brackets"></a>
 ## problems.brackets
@@ -223,7 +223,8 @@ easier to show examples of balanced and unbalanced strings than giving
 exact and precise definition, so:  
 (()(()()))() - is *balanced*  
 ()))() - is *unbalanced*  
-solution is construct using the stack structure.*
+in the solution we use the 
+<span style="color:blue">stack structure</span>.*
 <a name="BalancedParenthesisGenerator"></a>
 * **BalancedParenthesisGenerator**  
 *For the given number of pairs, generate all possible balanced 
@@ -239,7 +240,7 @@ any given length.</span>
 *From the given string containing only '(' & ')' remove all balanced (in 
 sense of BalanceChecker) parts.  
 For example: )((()())())))((( -> )))(((  
-Solution is construct using the 
+In the solution we use the 
 <span style="color:blue">stack structure</span>.*  
 <span style="color:red">Remark: after removing all balanced 
 parts we get a string: ))...n...)(...m...((,  
@@ -375,8 +376,8 @@ way of providing correct entry order.*
 firstly described by Joshua Bloch in a book Effective Java. The PECS 
 rule states good practices of using wildcards, for example - in APIs 
 design.  
-I found out PECS principle when I was searching the Internet for the 
-answer to the following apparent inconsistency:  
+I found out about PECS principle when I was searching the Internet for 
+the answer to the following apparent inconsistency:  
 Why in the Collections class we have:  
 addAll(Collection<**? super T**> c, T... elements)  
 while in the Collection we have:  
