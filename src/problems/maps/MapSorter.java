@@ -1,6 +1,7 @@
 package problems.maps;
 
 import com.google.common.base.Preconditions;
+import org.apache.commons.collections4.MapUtils;
 
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -13,12 +14,11 @@ import java.util.stream.Collectors;
  */
 public class MapSorter {
     
-    public static <K, V extends Comparable<V>> LinkedHashMap<K, V> sort(Map<K, V> map, 
-                                                                        Comparator<? super Entry<K,V>> comparator) {
-        Preconditions.checkArgument(map != null);
+    private static <K, V extends Comparable<V>> LinkedHashMap<K, V> sort(Map<K, V> map,
+                                                                         Comparator<? super Entry<K, V>> comparator) {
         Preconditions.checkArgument(comparator != null);
         
-        return map.entrySet().stream()
+        return MapUtils.emptyIfNull(map).entrySet().stream()
                 .sorted(comparator)
                 .collect(Collectors.toMap(
                         Entry::getKey,
@@ -28,15 +28,13 @@ public class MapSorter {
                 ));
     }
 
-    public static <K, V  extends Comparable<V>> LinkedHashMap<K, V> sortWithDefaultOrder(Map<K, V> map) {
-        Preconditions.checkArgument(map != null);
-        
-        return sort(map, Entry.comparingByValue());
+    public static <K, V  extends Comparable<V>> LinkedHashMap<K, V> sortByValueWithDefaultOrder(Map<K, V> map) {
+        return sort(MapUtils.emptyIfNull(map), Entry.comparingByValue());
     }
 
-    public static <K, V  extends Comparable<V>> LinkedHashMap<K, V> sortWithReversedOrder(Map<K, V> map) {
+    public static <K, V  extends Comparable<V>> LinkedHashMap<K, V> sortByValueWithReversedOrder(Map<K, V> map) {
         Preconditions.checkArgument(map != null);
         
-        return sort(map, Entry.<K, V>comparingByValue().reversed());
+        return sort(MapUtils.emptyIfNull(map), Entry.<K, V>comparingByValue().reversed());
     }
 }

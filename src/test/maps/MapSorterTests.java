@@ -1,8 +1,8 @@
 package test.maps;
 
+import org.apache.commons.collections4.MapUtils;
 import org.junit.Test;
 import problems.maps.LinkedMapsComparator;
-import problems.maps.MapPrinter;
 import problems.maps.MapSorter;
 
 import java.util.LinkedHashMap;
@@ -13,17 +13,17 @@ import static org.junit.Assert.*;
  * Created by mtumilowicz on 2017-04-25.
  */
 public class MapSorterTests {
-    
-    @Test(expected = IllegalArgumentException.class)
+
+    @Test
     public void sortWithDefaultOrderNullCheck() {
-        MapSorter.sortWithDefaultOrder(null);
+        assertEquals(MapSorter.sortByValueWithDefaultOrder(null), MapUtils.EMPTY_SORTED_MAP);
     }
     
     @Test
     public void sortWithDefaultOrderOneElement() {
         LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
         map.put("1", 1);
-        assertEquals(MapSorter.sortWithDefaultOrder(map), map);
+        assertEquals(MapSorter.sortByValueWithDefaultOrder(map), map);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class MapSorterTests {
         LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
         map.put("1", 1);
         map.put("2", 2);
-        assertTrue(LinkedMapsComparator.equals(MapSorter.sortWithDefaultOrder(map), map));
+        assertTrue(LinkedMapsComparator.equals(MapSorter.sortByValueWithDefaultOrder(map), map));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class MapSorterTests {
         LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
         map.put("2", 2);
         map.put("1", 1);
-        assertFalse(LinkedMapsComparator.equals(MapSorter.sortWithDefaultOrder(map), map));
+        assertFalse(LinkedMapsComparator.equals(MapSorter.sortByValueWithDefaultOrder(map), map));
     }
 
     @Test
@@ -52,7 +52,7 @@ public class MapSorterTests {
         sortedMap.put("1", 1);
         sortedMap.put("2", 2);
         
-        assertTrue(LinkedMapsComparator.equals(MapSorter.sortWithDefaultOrder(map), sortedMap));
+        assertTrue(LinkedMapsComparator.equals(MapSorter.sortByValueWithDefaultOrder(map), sortedMap));
     }
 
     @Test
@@ -66,8 +66,7 @@ public class MapSorterTests {
         sortedMap.put("1", 1);
         sortedMap.put("2", 2);
         sortedMap.put("3", 3);
-
-        MapPrinter.printOrdered(MapSorter.sortWithDefaultOrder(map));
-        assertTrue(LinkedMapsComparator.equals(MapSorter.sortWithDefaultOrder(map), sortedMap));
+        
+        assertTrue(LinkedMapsComparator.equals(MapSorter.sortByValueWithDefaultOrder(map), sortedMap));
     }
 }
