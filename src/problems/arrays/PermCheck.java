@@ -2,6 +2,7 @@ package problems.arrays;
 
 import com.google.common.base.Preconditions;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 /**
@@ -28,10 +29,8 @@ public class PermCheck {
     private static HashSet<Integer> toHashSet(int[] a) {
         Preconditions.checkArgument(a != null);
         HashSet<Integer> values = new HashSet<>();
-        for (int v : a) {
-            values.add(v);
-        }
-        
+        Arrays.stream(a).forEach(values::add);
+
         return values;
     }
 }
