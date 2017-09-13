@@ -36,6 +36,16 @@ public class CheckIfStringIsCyclicRotationOfOtherTests {
     }
 
     @Test
+    public void first_notEmpty_second_empty() {
+        assertFalse(CheckIfStringIsCyclicRotationOfOther.check("a", ""));
+    }
+
+    @Test
+    public void first_empty_second_notEmpty() {
+        assertFalse(CheckIfStringIsCyclicRotationOfOther.check("", "a"));
+    }
+
+    @Test
     public void first_notEmpty6_second_notEmpty6_fail() {
         assertFalse(CheckIfStringIsCyclicRotationOfOther.check("abbaba", "abbabb"));
     }

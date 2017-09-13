@@ -7,7 +7,10 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class CheckIfStringIsCyclicRotationOfOther {
     public static boolean check(String first, String second) {
-        if (first == null && second != null || first != null && second == null) {
+        if (first == null && second == null) {
+            return true;
+        }
+        if (first == null || second == null || first.length() != second.length()) {
             return false;
         }
         first = StringUtils.defaultIfEmpty(first, "");
