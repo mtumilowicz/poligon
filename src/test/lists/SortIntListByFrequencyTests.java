@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotEquals;
 public class SortIntListByFrequencyTests {
     @Test
     public void nullTest() {
-        assertEquals(SortIntListByFrequency.sort(null), Collections.EMPTY_LIST);
+        assertEquals(SortIntListByFrequency.sort(null), Collections.emptyList());
     }
 
     @Test

@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotEquals;
 public class IntArrayToListConverterTests {
     @Test
     public void nullTest() {
-        assertEquals(IntArrayToListConverter.convert(null), Collections.EMPTY_LIST);
+        assertEquals(IntArrayToListConverter.convert(null), Collections.emptyList());
     }
 
     @Test
