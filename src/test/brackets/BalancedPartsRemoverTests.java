@@ -25,29 +25,29 @@ public class BalancedPartsRemoverTests {
     
     @Test
     public void correctSimpleString() {
-        assertEquals(BalancedPartsRemover.remove("()"), "empty");
+        assertEquals("empty", BalancedPartsRemover.remove("()"));
     }
     
     @Test
     public void correctComplexStrings() {
         Set<String> allBalancedStrings = BalancedParenthesisGenerator.generate(5);
         for (String s : allBalancedStrings) {
-            assertEquals(BalancedPartsRemover.remove(s),"empty");
+            assertEquals("empty",BalancedPartsRemover.remove(s));
         }
     }
     
     @Test
     public void incorrectSimpleString() {
-        assertEquals(BalancedPartsRemover.remove(")("),")(");
+        assertEquals(")(",BalancedPartsRemover.remove(")("));
     }
 
     @Test
     public void correctInnerSimplePart() {
-        assertEquals(BalancedPartsRemover.remove(")))()(("),")))((");
+        assertEquals(")))((",BalancedPartsRemover.remove(")))()(("));
     }
     
     @Test
     public void correctInnerComplexPart() {
-        assertEquals(BalancedPartsRemover.remove("))(((()()))()(("),"))(((");
+        assertEquals("))(((",BalancedPartsRemover.remove("))(((()()))()(("));
     }
 }

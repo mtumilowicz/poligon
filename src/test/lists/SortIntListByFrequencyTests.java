@@ -25,21 +25,21 @@ public class SortIntListByFrequencyTests {
 
     @Test
     public void length_2() {
-        assertEquals(SortIntListByFrequency.sort(Arrays.asList(1, 2)), Arrays.asList(1, 2));
+        assertEquals(Arrays.asList(1, 2), SortIntListByFrequency.sort(Arrays.asList(1, 2)));
     }
 
     @Test
     public void length_2_wrong_order() {
-        assertNotEquals(SortIntListByFrequency.sort(Arrays.asList(1, 2)), Arrays.asList(2, 1));
+        assertNotEquals(Arrays.asList(2, 1), SortIntListByFrequency.sort(Arrays.asList(1, 2)));
     }
 
     @Test
     public void length_3_sorted() {
-        assertEquals(SortIntListByFrequency.sort(Arrays.asList(1, 2, 2)), Arrays.asList(2, 2, 1));
+        assertEquals(Arrays.asList(2, 2, 1), SortIntListByFrequency.sort(Arrays.asList(1, 2, 2)));
     }
 
     @Test
     public void length_3_unsorted() {
-        assertEquals(SortIntListByFrequency.sort(Arrays.asList(2, 1, 2)), Arrays.asList(2, 2, 1));
+        assertEquals(Arrays.asList(2, 2, 1), SortIntListByFrequency.sort(Arrays.asList(2, 1, 2)));
     }
 }

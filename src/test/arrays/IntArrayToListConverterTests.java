@@ -15,26 +15,26 @@ import static org.junit.Assert.assertNotEquals;
 public class IntArrayToListConverterTests {
     @Test
     public void nullTest() {
-        assertEquals(IntArrayToListConverter.convert(null), Collections.emptyList());
+        assertEquals(Collections.emptyList(), IntArrayToListConverter.convert(null));
     }
 
     @Test
     public void length_1() {
-        assertEquals(IntArrayToListConverter.convert(new int[]{1}), Collections.singletonList(1));
+        assertEquals(Collections.singletonList(1), IntArrayToListConverter.convert(new int[]{1}));
     }
 
     @Test
     public void length_2() {
-        assertEquals(IntArrayToListConverter.convert(new int[]{1, 2}), Arrays.asList(1, 2));
+        assertEquals(Arrays.asList(1, 2), IntArrayToListConverter.convert(new int[]{1, 2}));
     }
 
     @Test
     public void length_2_wrong_order() {
-        assertNotEquals(IntArrayToListConverter.convert(new int[]{1, 2}), Arrays.asList(2, 1));
+        assertNotEquals(Arrays.asList(2, 1), IntArrayToListConverter.convert(new int[]{1, 2}));
     }
 
     @Test
     public void length_3_unsorted() {
-        assertEquals(IntArrayToListConverter.convert(new int[]{2, 1, 2}), Arrays.asList(2, 1, 2));
+        assertEquals(Arrays.asList(2, 1, 2), IntArrayToListConverter.convert(new int[]{2, 1, 2}));
     }
 }

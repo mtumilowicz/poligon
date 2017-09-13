@@ -15,17 +15,17 @@ import static org.junit.Assert.assertArrayEquals;
 public class SortIntArrayByFrequencyTests {
     @Test
     public void nullTest() {
-        assertArrayEquals(SortIntArrayByFrequency.sort(null), ArrayUtils.EMPTY_INT_ARRAY);
+        assertArrayEquals(ArrayUtils.EMPTY_INT_ARRAY, SortIntArrayByFrequency.sort(null));
     }
 
     @Test
     public void length_1() {
-        assertArrayEquals(SortIntArrayByFrequency.sort(new int[]{1}), new int[]{1});
+        assertArrayEquals(new int[]{1}, SortIntArrayByFrequency.sort(new int[]{1}));
     }
 
     @Test
     public void length_2() {
-        assertArrayEquals(SortIntArrayByFrequency.sort(new int[]{1, 2}), new int[]{1, 2});
+        assertArrayEquals(new int[]{1, 2}, SortIntArrayByFrequency.sort(new int[]{1, 2}));
     }
 
     @Test
@@ -35,11 +35,11 @@ public class SortIntArrayByFrequencyTests {
 
     @Test
     public void length_3_sorted() {
-        assertArrayEquals(SortIntArrayByFrequency.sort(new int[]{1, 2, 2}), new int[]{2, 2, 1});
+        assertArrayEquals(new int[]{2, 2, 1}, SortIntArrayByFrequency.sort(new int[]{1, 2, 2}));
     }
 
     @Test
     public void length_3_unsorted() {
-        assertArrayEquals(SortIntArrayByFrequency.sort(new int[]{2, 1, 2}), new int[]{2, 2, 1});
+        assertArrayEquals(new int[]{2, 2, 1}, SortIntArrayByFrequency.sort(new int[]{2, 1, 2}));
     }
 }

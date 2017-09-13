@@ -16,14 +16,14 @@ public class MapSorterTests {
 
     @Test
     public void sortWithDefaultOrderNullCheck() {
-        assertEquals(MapSorter.sortByValueWithDefaultOrder(null), MapUtils.EMPTY_SORTED_MAP);
+        assertEquals(MapUtils.EMPTY_SORTED_MAP, MapSorter.sortByValueWithDefaultOrder(null));
     }
     
     @Test
     public void sortWithDefaultOrderOneElement() {
         LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
         map.put("1", 1);
-        assertEquals(MapSorter.sortByValueWithDefaultOrder(map), map);
+        assertEquals(map, MapSorter.sortByValueWithDefaultOrder(map));
     }
 
     @Test
