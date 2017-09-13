@@ -16,8 +16,4 @@ public class CheckIfStringIsCyclicRotationOfOther {
                 StringUtils.join(first, first),
                 second);
     }
-
-    public static void main(String[] args) {
-        System.out.println(check("a", null));
-    }
 }
