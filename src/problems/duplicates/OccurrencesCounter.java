@@ -1,6 +1,6 @@
 package problems.duplicates;
 
-import com.google.common.base.Preconditions;
+import org.apache.commons.collections4.ListUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
  */
 public class OccurrencesCounter<E> {
     public static <E> Map<E, Long> count(List<E> list) {
-        Preconditions.checkArgument(list != null);
-        return list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return ListUtils.emptyIfNull(list).stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 }

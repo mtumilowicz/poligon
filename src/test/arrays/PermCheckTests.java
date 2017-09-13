@@ -11,9 +11,9 @@ import static org.junit.Assert.assertTrue;
  */
 public class PermCheckTests {
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void nullTest() {
-        PermCheck.check(null);
+        assertTrue(PermCheck.check(null));
     }
     
     @Test

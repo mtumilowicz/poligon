@@ -1,20 +1,21 @@
 package problems.arrays;
 
-import com.google.common.base.Preconditions;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by mtumilowicz on 2017-05-04.
  */
 public class PermCheck {
     public static boolean check(int[] a) {
-        Preconditions.checkArgument(a != null);
+        a = ArrayUtils.nullToEmpty(a);
         boolean isPermutation = true;
         if (a.length > 1) {
             int min = ExtremeArrayValues.findMin(a);
-            HashSet<Integer> values = toHashSet(a);
+            Set<Integer> values = toHashSet(a);
             int max = min + a.length - 1;
             for (int i = min; i <= max; i++) {
                 if (!values.contains(i)) {
@@ -26,10 +27,9 @@ public class PermCheck {
         return isPermutation;
     }
     
-    private static HashSet<Integer> toHashSet(int[] a) {
-        Preconditions.checkArgument(a != null);
-        HashSet<Integer> values = new HashSet<>();
-        Arrays.stream(a).forEach(values::add);
+    private static Set<Integer> toHashSet(int[] a) {
+        Set<Integer> values = new HashSet<>();
+        Arrays.stream(ArrayUtils.nullToEmpty(a)).forEach(values::add);
 
         return values;
     }

@@ -1,6 +1,6 @@
 package test.duplicates;
 
-import com.google.common.base.Preconditions;
+import org.apache.commons.collections4.ListUtils;
 import org.junit.Test;
 import problems.duplicates.OccurrencesCounter;
 
@@ -19,9 +19,9 @@ public abstract class OccurrencesCounterTests<E> {
     public abstract List<E> getTwoEqualsElementsListOfLengthTwo();
     public abstract List<E> getList();
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void nullTest() {
-        OccurrencesCounter.<E>count(null);
+        test(null);
     }
 
     @Test
@@ -40,7 +40,6 @@ public abstract class OccurrencesCounterTests<E> {
     }
 
     private void test(List<E> list) {
-        Preconditions.checkArgument(list != null);
-        assertEquals(list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())), OccurrencesCounter.count(list));
+        assertEquals(ListUtils.emptyIfNull(list).stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())), OccurrencesCounter.count(list));
     }
 }
