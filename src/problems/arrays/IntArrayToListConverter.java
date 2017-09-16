@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  */
 public class IntArrayToListConverter {
     public static List<Integer> convert(int[] a) {
-        return Arrays.stream(ArrayUtils.nullToEmpty(ArrayUtils.nullToEmpty(a)))
+        return Arrays.stream(ArrayUtils.nullToEmpty(a))
                 .boxed()
                 .collect(Collectors.toList());
     }
