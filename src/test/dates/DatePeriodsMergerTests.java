@@ -16,9 +16,9 @@ import static utils.DatePeriodsContainer.*;
  */
 public class DatePeriodsMergerTests {
     
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void mergeNull() {
-        DatePeriodsMerger.merge(null);
+        assertThat(new LinkedList<>(), is(DatePeriodsMerger.merge(null)));
     }
     
     @Test

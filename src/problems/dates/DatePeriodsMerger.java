@@ -1,12 +1,10 @@
 package problems.dates;
 
 import com.google.common.base.Preconditions;
+import org.apache.commons.collections4.CollectionUtils;
 import utils.DateUtil;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import static problems.dates.DatePeriod.DatePeriodFactory;
 
@@ -20,9 +18,11 @@ public class DatePeriodsMerger {
         System.out.println(merge(datePeriods));
     }
     
-    public static List<DatePeriod> merge(ArrayList<DatePeriod> datePeriods) {
-        Preconditions.checkArgument(datePeriods != null);
-        ArrayList<DatePeriod> periodsSorted = new ArrayList<>(DatePeriodsSorter.sort(datePeriods));
+    public static List<DatePeriod> merge(List<DatePeriod> datePeriods) {
+        if (CollectionUtils.isEmpty(datePeriods)) {
+            return Collections.emptyList();
+        }
+        List<DatePeriod> periodsSorted = new ArrayList<>(DatePeriodsSorter.sort(datePeriods));
         DatePeriod first = periodsSorted.get(0);
         Date dateFrom = first.getDateFrom();
         Date dateTo = first.getDateTo();
