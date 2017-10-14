@@ -15,8 +15,4 @@ public class ListReverseIterative {
 
         return newHead;
     }
-
-    public void empty() {
-
-    }
 }

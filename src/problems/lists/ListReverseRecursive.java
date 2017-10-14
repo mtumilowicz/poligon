@@ -16,8 +16,4 @@ public class ListReverseRecursive {
 
         return listNode;
     }
-
-    public void empty() {
-
-    }
 }
