@@ -50,4 +50,8 @@ public class ListReverseIterativeTests {
         
         Assert.assertEquals(controlHead, ListReverseIterative.reverse(testHead));
     }
+
+    public void empty() {
+
+    }
 }
