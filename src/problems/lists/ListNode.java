@@ -3,6 +3,8 @@ package problems.lists;
 import java.util.Objects;
 
 /**
+ * base implementation of one-direction list (only for exercises purposes - all is public to ease readability)
+ * 
  * Created by mtumilowicz on 2017-10-13.
  */
 public class ListNode {
