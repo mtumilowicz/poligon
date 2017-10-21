@@ -22,15 +22,16 @@ public class DatePeriodsMerger {
         if (CollectionUtils.isEmpty(datePeriods)) {
             return Collections.emptyList();
         }
-        List<DatePeriod> periodsSorted = new ArrayList<>(DatePeriodsSorter.sort(datePeriods));
-        DatePeriod first = periodsSorted.get(0);
+        
+        Collections.sort(datePeriods);
+        DatePeriod first = datePeriods.get(0);
         Date dateFrom = first.getDateFrom();
         Date dateTo = first.getDateTo();
 
         List<DatePeriod> result = new LinkedList<>();
 
-        for (int i = 1; i < periodsSorted.size(); i++) {
-            DatePeriod current = periodsSorted.get(i);
+        for (int i = 1; i < datePeriods.size(); i++) {
+            DatePeriod current = datePeriods.get(i);
             if (dateTo == null || !current.getDateFrom().after(dateTo)) {
                 dateTo = DateUtil.max(current.getDateTo(), dateTo);
             } else {

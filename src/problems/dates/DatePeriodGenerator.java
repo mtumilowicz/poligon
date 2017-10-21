@@ -26,8 +26,4 @@ public class DatePeriodGenerator {
         }
         return datePeriods;
     }
-    
-    public static List<DatePeriod> generateSorted(int howMany) {
-        return DatePeriodsSorter.sort(generate(howMany));
-    }
 }
