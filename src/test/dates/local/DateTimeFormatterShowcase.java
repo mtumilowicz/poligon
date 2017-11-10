@@ -15,7 +15,7 @@ public class DateTimeFormatterShowcase {
 
         System.out.println("+------------------------------+");
         System.out.println("LocalDate");
-        LocalDate date = LocalDate.of(2015, 4, 10);
+        LocalDate date = LocalDate.of(2015, 4, 10); 
 
         System.out.println("FULL: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
         System.out.println("LONG: " + date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
@@ -25,7 +25,7 @@ public class DateTimeFormatterShowcase {
         System.out.println("+------------------------------+");
         System.out.println("LocalTime");
         LocalTime time = LocalTime.of(17, 22, 19);
-        
+
         System.out.println("FULL: " + time.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.FULL).withZone(ZoneId.systemDefault())));
         System.out.println("LONG: " + time.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.LONG).withZone(ZoneId.systemDefault())));
         System.out.println("MEDIUM: " + time.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)));
