@@ -3,8 +3,9 @@ package problems.brackets;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashSet;
-import java.util.Stack;
 
 /**
  * Created by mtumilowicz on 2017-03-23.
@@ -22,7 +23,7 @@ public class BalanceChecker {
 
     public boolean check(String string) {
         Preconditions.checkArgument(string != null && string.length() % 2 == 0, "String has to be even!");
-        Stack<Character> bracketsStack = new Stack<>();
+        Deque<Character> bracketsStack = new ArrayDeque<>();
         for (int i = 0; i<string.length(); i++) {
             char symbol = string.charAt(i);
             if (balanceBijectionMap.values().contains(symbol)) {
@@ -35,7 +36,7 @@ public class BalanceChecker {
                 if (bracketsStack.size() > (string.length() - i)) {
                     return false;
                 }
-                if (!bracketsStack.pop().equals(balanceBijectionMap.get(symbol))) {
+                if (!bracketsStack.poll().equals(balanceBijectionMap.get(symbol))) {
                     return false;
                 }
             }
