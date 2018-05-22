@@ -4,7 +4,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by mtumilowicz on 2018-05-22.
@@ -28,13 +30,17 @@ public class BinaryTree {
     public String data() {
         return data;
     }
+    
     private List<String> toList(List<BinaryTree> toReturn, List<BinaryTree> offset) {
         if (offset.size() == 0) return toReturn.stream().map(BinaryTree::data).collect(Collectors.toList());
-        LinkedList<BinaryTree> temp = new LinkedList<>();
-        offset.stream().forEach(bt -> {
-            Optional.ofNullable(bt.left).ifPresent(temp::add);
-            Optional.ofNullable(bt.right).ifPresent(temp::add);
-        });
+        
+        List<BinaryTree> temp = offset.stream()
+                .map(bt -> Stream.of(Optional.ofNullable(bt.left), Optional.ofNullable(bt.right)))
+                .flatMap(Function.identity())
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .collect(Collectors.toList());
+        
         toReturn.addAll(temp);
         return toList(toReturn, temp);
     }
