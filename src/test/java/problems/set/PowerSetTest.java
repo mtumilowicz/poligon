@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by mtumilowicz on 2018-06-10.
@@ -66,5 +68,10 @@ public class PowerSetTest {
         expected.add(new HashSet<>(ImmutableList.of(a, b, c)));
 
         Assert.assertEquals(expected, PowerSet.of(new HashSet<>(ImmutableList.of(a, b, c))));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void fortyElementSet() {
+        PowerSet.of(Stream.iterate(0, x -> x + 1).limit(50).collect(Collectors.toSet()));
     }
 }
