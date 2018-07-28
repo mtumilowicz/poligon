@@ -14,6 +14,7 @@ import java.util.List;
  */
 class ListToListOfPairs {
     static List<Pair> convert(List<Integer> list) {
+        list = ListUtils.emptyIfNull(list);
         Preconditions.checkArgument(list.size() % 2 == 0);
         Deque<Integer> deque = new ArrayDeque<>(ListUtils.emptyIfNull(list));
 
