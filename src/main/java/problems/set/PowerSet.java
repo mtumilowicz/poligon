@@ -18,7 +18,8 @@ public final class PowerSet {
     private PowerSet() {
     }
 
-    public static final <E> Collection<Set<E>> of(Set<E> s) {
+    public static <E> Collection<Set<E>> of(Set<E> s) {
+        s = SetUtils.emptyIfNull(s);
         Preconditions.checkArgument(s.size() <= 31, "Max size of PowerSet in java is bounded by Integer range");
         return ImmutableSet.copyOf(new PowerSetImplementation<>(s));
     }
