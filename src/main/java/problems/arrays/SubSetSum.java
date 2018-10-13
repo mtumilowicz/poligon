@@ -16,7 +16,7 @@ final class SubSetSum {
             return true;
         }
         
-        return SubSetSum.isAnySubset_recursive_noRepetitions(set, set.length, sum);
+        return SubSetSum.isAnySubset_recursive_repetitions(set, set.length, sum);
     }
 
     private static boolean isAnySubset_recursive_noRepetitions(int[] set, int n, int sum) {

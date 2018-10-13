@@ -31,7 +31,17 @@ public class SubSetSumTest {
     
     @Test
     public void isAnySubset_recursive_repetitions_2() {
-        assertFalse(SubSetSum.isAnySubset_recursive_noRepetitions(new int[]{1, 3, 2, 14, 15, 6}, 13));
+        assertTrue(SubSetSum.isAnySubset_recursive_repetitions(new int[]{1}, 2)); // 1 x 2
+    }
+
+    @Test
+    public void isAnySubset_recursive_repetitions_13() {
+        assertTrue(SubSetSum.isAnySubset_recursive_repetitions(new int[]{5, 6, 14, 2, 28, 1, 3}, 13)); // 1 x 13
+    }
+
+    @Test
+    public void isAnySubset_recursive_repetitions_15() {
+        assertTrue(SubSetSum.isAnySubset_recursive_repetitions(new int[]{2, 3}, 15)); // (2, 3) x 3
     }
 
 }
