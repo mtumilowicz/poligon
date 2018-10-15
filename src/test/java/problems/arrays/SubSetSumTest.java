@@ -45,22 +45,22 @@ public class SubSetSumTest {
     }
 
     @Test
-    public void isAnySubset_recursive_dynamically_2() {
+    public void isAnySubset_dynamically_2() {
         assertFalse(SubSetSum.isAnySubset_dynamically(new int[]{1}, 2));
     }
 
     @Test
-    public void isAnySubset_recursive_dynamically_5() {
+    public void isAnySubset_dynamically_5() {
         assertTrue(SubSetSum.isAnySubset_dynamically(new int[]{1, 3, 2}, 5)); // 3 2
     }
 
     @Test
-    public void isAnySubset_recursive_dynamically_10() {
+    public void isAnySubset_dynamically_10() {
         assertTrue(SubSetSum.isAnySubset_dynamically(new int[]{1, 3, 2, 12, 15, 6}, 10)); // 1 3 6
     }
 
     @Test
-    public void isAnySubset_recursive_dynamically_13() {
+    public void isAnySubset_dynamically_13() {
         assertFalse(SubSetSum.isAnySubset_dynamically(new int[]{1, 3, 2, 14, 15, 6}, 13));
     }
 
