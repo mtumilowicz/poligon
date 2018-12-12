@@ -1,7 +1,6 @@
 package problems.lists;
 
 import com.google.common.base.Preconditions;
-import lombok.Value;
 import org.apache.commons.collections4.ListUtils;
 
 import java.util.ArrayDeque;
@@ -28,8 +27,3 @@ class ListToListOfPairs {
     }
 }
 
-@Value
-class Pair {
-    Integer first;
-    Integer last;
-}
